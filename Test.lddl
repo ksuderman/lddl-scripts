@@ -1,0 +1,9 @@
+COPYRIGHT = "Copyright 2014 American National Corpus"
+
+if (args.module == null) {
+	println "No module specified."
+	args.each { println "\t${it}" }
+	System.exit(1)
+}
+
+include args.module

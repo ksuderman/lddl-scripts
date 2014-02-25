@@ -1,0 +1,34 @@
+/*
+ * Common definitions to be used throughout the LAPPS grid.
+ */
+
+/* Everyone on the LAPPS grid should use the same domain. */
+DOMAIN = 'lapps.nlp'
+
+/*
+ * Service types.
+ *
+ * Currently LAPPS has two service types:
+ *   1. data sources
+ *   2. processing services
+ */
+SERVICE = 'service.type.processor'
+DATASOURCE = 'service.type.datasource'
+
+/*
+ * Resource types
+ *
+ * The service manager requires a "resource type" for every service. However, in
+ * the context of LAPPS this only makes sense for DataSources. So most processing
+ * services will use the NONE_TYPE resource type as a pseudo-null value.
+ */
+CORPUS_TYPE = 'resource.type.corpus'
+NONE_TYPE = 'resource.type.null'
+
+// Resource ID values used by the data sources.
+NONE_ID = 'resource.id.none'
+
+/* License types. This list is by no means exhaustive. */
+APACHE = 'Apache 2.0'
+GPL = 'GPL'
+

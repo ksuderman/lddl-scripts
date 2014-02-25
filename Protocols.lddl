@@ -1,0 +1,20 @@
+/*
+ * This script likely isn't necessary as SOAP_RPC_ENCODED seems to get
+ * pulled in from the ether and REST is not used at this time. However, it
+ * is included for the sake of completeness.
+ */
+
+include 'Common'
+include 'Database'
+
+protocol {
+	id 'SOAP_RPC_ENCODED'
+	name 'SOAP RPC Encoded'
+	description 'RPC Encoded SOAP messages.'
+}
+
+protocol {
+    id 'REST'
+    name 'REST'
+    description 'RESTful web services.'
+}

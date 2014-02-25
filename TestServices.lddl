@@ -1,0 +1,14 @@
+include 'Database'
+include 'Common'
+include 'Servers'
+include 'Functions'
+
+def VERSION='1.0.0'
+def ROOT="${servers.default}/TestServices/${VERSION}/services"
+
+def testServices = [
+    [id:"test.datasource_${VERSION}", name:"Test Datasource v${VERSION}", url:"${ROOT}/TestDatasource", desc:'Test Datasource', license:'Apache 2.0'],
+    [id:"test.webservice_${VERSION}", name:"Test Web Service v${VERSION}", url:"${ROOT}/TestWebService", desc:'Test Web Service', license:'Apache 2.0']
+]
+
+register_services(testServices)

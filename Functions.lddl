@@ -1,0 +1,81 @@
+/*
+ * Functions used to register web services and datasources.
+ */
+
+void register_datasources(list) {
+    list.each {
+        register_datasource(it)
+    }
+}
+
+register_datasource = { source ->
+    service {
+        id source.id
+        name source.name
+        url source.url
+        protocol 'SOAP_RPC_ENCODED'
+        domain DOMAIN
+        type DATASOURCE
+        copyright COPYRIGHT
+        resource MASC_ID
+        license APACHE
+        description source.desc
+        allow 'commercial', 'nonprofit', 'research'
+        control 'client', 'server'
+		federate true
+        attributes {
+        	lang 'en-US'
+        }
+    }
+    news "Configured ${source.name}"
+}
+
+register_services = { list ->
+    list.each {
+        register_service(it)
+    }
+}
+
+register_service = { svc ->
+    service {
+        id svc.id
+        name svc.name
+        url svc.url
+        protocol 'SOAP_RPC_ENCODED'
+        domain DOMAIN
+        type SERVICE
+        copyright COPYRIGHT
+        resource NONE_ID
+        license svc.license
+        description svc.desc
+        allow 'commercial', 'nonprofit', 'research'
+        control 'client', 'server'
+        federate true
+        attributes {
+        	lang 'en-US'
+        }
+    }
+    news "Configured ${svc.name}"
+}
+
+register_converter = { converter ->
+    service {
+        id converter.id
+        name converter.name
+        url converter.url
+        protocol 'SOAP_RPC_ENCODED'
+        domain DOMAIN
+        type SERVICE
+        copyright COPYRIGHT
+        resource NONE_ID
+        license APACHE
+        description converter.desc
+        allow 'commercial', 'nonprofit', 'research'
+        control 'client', 'server'
+        federate true
+        attributes {
+        	lang 'any'
+        }
+    }
+    news "Registered ${converter.name}"
+}

@@ -1,0 +1,9 @@
+/*
+ * Database connection info.
+ */
+
+database {
+    url 'jdbc:postgresql://localhost/langrid'
+    username 'langrid'
+    password 'langrid'
+}

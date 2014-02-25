@@ -1,0 +1,7 @@
+/*
+ * Database connection info.
+ *
+ */
+
+println "The DB.lddl script is deprecated. Use the Database.lddl script instead."
+include 'Database'

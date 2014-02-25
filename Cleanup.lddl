@@ -1,0 +1,39 @@
+/*
+ * Removes all LAPPS related data from the service grid database.
+ *
+ * NOTE: The order of the deletes is important to prevent foreign key
+ * violations.
+ */
+
+include 'Common'
+include 'Database'
+
+data = [
+    [table:'serviceendpoint', column:'gridid', value:GRID_ID],
+    [table:'service_alloweduse', column:'service_gridid', value:GRID_ID],
+    [table:'service_allowedappprovision', column:'service_gridid', value:GRID_ID],
+    [table:'serviceattribute', column:'gridid', value:GRID_ID],
+    [table:'serviceinterfacedefinition', column:'servicetype_domainid', value:DOMAIN],
+    [table:'servicetype_servicemetaattribute', column:'servicetype_domainid', value:DOMAIN],
+    [table:'servicemetaattribute', column:'domainid', value:DOMAIN],
+    [table:'servicetype', column:'domainid', value:DOMAIN],
+    [table:'resourceattribute', column:'gridid', value:GRID_ID],
+    [table:'resourcetype_resourcemetaattribute', column:'resourcetype_domainid', value:DOMAIN],
+    [table:'resourcemetaattribute', column:'domainid', value:DOMAIN],
+    [table:'resourcetype', column:'domainid', value:DOMAIN],
+    [table:'protocol', column:'ownerusergridid', value:GRID_ID],
+    [table:'resource', column:'gridid', value:GRID_ID],
+    [table:'service', column:'gridid', value:GRID_ID],
+    [table:'domain', column:'domainid', value:DOMAIN]
+]
+
+data.each { row ->
+    sql "delete from ${row.table} where ${row.column} = '${row.value}'".toString()
+}
+
+// Deleting from the news and userroles tables are special cases since we need to
+// match on more than one column.
+sql "delete from news where gridid = '${GRID_ID}' and nodeid = '${NODE_ID}'"
+sql "delete from userroles where gridid = '${GRID_ID}' and userid <> '${GRID_USER_ID}'"
+sql "delete from users where gridid='${GRID_ID}' and userid <> '${GRID_USER_ID}'"
+news 'The database was cleared of all LAPPS related data.'

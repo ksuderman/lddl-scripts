@@ -1,0 +1,31 @@
+include 'Common'
+include 'Database'
+
+/* Register users for each of the ANC nodes. */
+/*
+[2,3,4].each { n ->
+	user {
+		id "anc${n}"
+		password 'password'
+		name 'Keith Suderman'
+		address 'New York'
+		email 'suderman@anc.org'
+		homepage "http://${n}.anc.org:8080/service_manager"
+		organization "ANC ${n}"
+	}
+	news "Registered user anc${n}"
+}
+*/
+
+user {
+    id 'tester'
+    password 'tester'
+    name 'Tester'
+    address 'New York'
+    email 'tester@anc.org'
+    homepage 'http://www.example.org'
+    organization 'American National Corpus'
+}
+
+
+news 'Registered test user.'

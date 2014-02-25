@@ -1,0 +1,39 @@
+/*
+ * LAPPS only uses two interface definitions; one interface for data sources
+ * and another for web services.  The WSDL files should be in the same directory
+ * as this script.
+ */
+
+include 'Common'
+include 'Database'
+
+def wsdlWebService='WebService.wsdl'
+def wsdlDataSource='Datasource.wsdl'
+
+import static groovy.io.FileType.FILES
+new File('.').eachFileRecurse(FILES) {
+    if(it.name.endsWith(wsdlWebService))
+        wsdlWebService = it.getAbsolutePath()
+
+    if(it.name.endsWith(wsdlDataSource))
+        wsdlDataSource = it.getAbsolutePath()
+}
+
+serviceInterfaceDefinition {
+    name 'LAPPS DataSource'
+	domain DOMAIN
+	type DATASOURCE
+	protocol 'SOAP_RPC_ENCODED'
+	url "file:${wsdlDataSource}"
+}
+
+serviceInterfaceDefinition {
+    name 'LAPPS Web Service'
+	domain DOMAIN
+	type SERVICE
+	protocol 'SOAP_RPC_ENCODED'
+	url "file:${wsdlWebService}"
+}
+
+news 'Added interface definitions for LAPPS web services and data sources.'
+

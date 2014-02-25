@@ -1,0 +1,14 @@
+/*
+ * The domain for LAPPS NLP applications.
+ */
+
+include 'Common'
+include 'Database'
+
+domain {
+	id DOMAIN
+	name 'Natural Language Processing'
+	description 'NLP tasks related to LAPPS.'
+}
+news "Domain added: ${DOMAIN}"
+
