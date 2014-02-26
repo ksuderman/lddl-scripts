@@ -8,10 +8,16 @@
 
 // Connect as the PostgreSQL superuser since we need to drop
 // an entire database.
+
+if (args.username == null || args.password == null) {
+   println "Please provide a username and password to use."
+   System.exit()
+}
+
 postgres {
     url 'jdbc:postgresql://localhost'
-    username 'postgres'
-    password 'postgres'
+    username args.username
+    password args.password
 }
 
 comment 'Dropping the existing database.'
