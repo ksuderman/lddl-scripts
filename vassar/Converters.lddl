@@ -1,0 +1,11 @@
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def BASE_URL = "${servers.DEFAULT}/GateConverter/services/"
+[
+    [id:'convert.gate2json', name:'GateToJson', desc:'GATE to JSON-LD converter', url:"${BASE_URL}/GateToJson"],
+    [id:'convert.json2gate', name:'JsonToGate', desc:'JSON-LD to GATE converter', url:"${BASE_URL}/JsonToGate"]
+].each {
+    register_converter(it)
+}

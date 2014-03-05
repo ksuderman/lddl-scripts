@@ -1,0 +1,32 @@
+include 'Common'
+include 'Database'
+
+MASC_ID = 'MASC-3.0.0'
+
+resource {
+    id MASC_ID
+    copyright COPYRIGHT
+    license APACHE
+    description 'MASC 3.0.0'
+    name 'MASC 3.0.0'
+    domain DOMAIN
+    type CORPUS_TYPE
+    attributes {
+    	lang 'en-US'
+    	size '500000'
+    	unit 'words'
+    }
+}
+
+resource {
+    id NONE_ID
+    copyright COPYRIGHT
+    license APACHE
+    description 'A resource for services that do not require a resource.'
+    name 'None'
+    domain DOMAIN
+    type NONE_TYPE
+    attributes {
+    	lang 'none'
+    }
+}
