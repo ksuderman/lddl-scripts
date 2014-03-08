@@ -1,7 +1,11 @@
-include 'Servers'
 
 COPYRIGHT = "Copyright 2014 American National Corpus"
-MASC_ID = 'MASC-3.0.0'
-//include 'services/Converters0.3.0'
-include 'services/Gate1.3.0'
-include 'services/Stanford1.3.0'
+
+if (args.size() == 0) {
+	println "No module(s) specified."
+	System.exit(1)
+}
+
+args.each { modules ->
+	include module
+}

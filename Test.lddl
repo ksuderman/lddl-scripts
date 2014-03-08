@@ -1,9 +1,10 @@
 COPYRIGHT = "Copyright 2014 American National Corpus"
 
-if (args.module == null) {
-	println "No module specified."
-	args.each { println "\t${it}" }
+if (args.size() == 0) {
+	println "No module(s) specified."
 	System.exit(1)
 }
 
-include args.module
+args.each { modules ->
+	include module
+}
