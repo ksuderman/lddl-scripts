@@ -2,6 +2,8 @@
  * The LDDL script for configuring the ANC/Vassar LAPPS service node.  This
  * script configures the types, interfaces and services available.
  */
+include 'Servers'
+
 if (args.clean) {
 	println "Cleaning the database"
 	include 'Cleanup'
