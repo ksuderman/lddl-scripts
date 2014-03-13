@@ -6,6 +6,7 @@ if (args.size() == 0) {
 	System.exit(1)
 }
 
-args.each { modules ->
+args.each { module, ignored ->
+	println "Updating ${module}"
 	include module
 }
