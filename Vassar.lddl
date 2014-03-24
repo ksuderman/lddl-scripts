@@ -23,11 +23,11 @@ include 'Setup'
 include 'vassar/MASC'
 
 // Definitions of the processing services available at Vassar.
-include 'vassar/Datasources1.3.0'
+//include 'vassar/Datasources1.3.0'
 include 'vassar/Datasources1.4.0'
 include 'vassar/Converters0.3.1'
 include 'vassar/Gate1.3.2'
-include 'vassar/OpenNLP'
+//include 'vassar/OpenNLP'
 include 'vassar/Stanford1.3.1'
 include 'Users'
 

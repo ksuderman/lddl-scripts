@@ -23,9 +23,19 @@ user {
     name 'Tester'
     address 'New York'
     email 'tester@anc.org'
-    homepage 'http://www.example.org'
-    organization 'American National Corpus'
+    homepage 'tester'
+    organization 'tester'
+}
+
+user {
+    id 'guest'
+    password 'guest'
+    name 'Guest'
+    address 'New York'
+    email 'guest@anc.org'
+    homepage 'guest'
+    organization 'Guest'
 }
 
 
-news 'Registered test user.'
+news 'Registered test and guest users.'

@@ -1,5 +1,5 @@
 /*
- * A modular LDDL script for configuring the base LAPPS types and interfaces.
+ * A modular LDDL script for configuring the common LAPPS types and interfaces.
  */
 include 'Common'
 include 'Database'
