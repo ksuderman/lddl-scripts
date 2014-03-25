@@ -23,19 +23,18 @@ user {
     name 'Tester'
     address 'New York'
     email 'tester@anc.org'
-    homepage 'tester'
+    homepage 'http://tester.anc.org'
     organization 'tester'
 }
 
 user {
     id 'guest'
-    password 'guest'
+    password 'guest1'
     name 'Guest'
     address 'New York'
     email 'guest@anc.org'
-    homepage 'guest'
+    homepage 'http://guest.anc.org'
     organization 'Guest'
 }
-
 
 news 'Registered test and guest users.'

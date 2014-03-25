@@ -1,11 +1,14 @@
-include 'Database'
-include 'Common'
-include 'Functions'
+include "Database"
+include "Common"
+include "Functions"
+include 'Servers'
 
-def BASE_URL = "${servers.DEFAULT}/GateConverter/services/"
+def VERSION = CONVERTERS_VERSION ?: args.version ?: '0.3.1'
+def BASE_URL = "${servers.DEFAULT}/GateConverter/${VERSION}/services/"
+
 [
-    [id:'convert.gate2json', name:'GateToJson', desc:'GATE to JSON-LD converter', url:"${BASE_URL}/GateToJson"],
-    [id:'convert.json2gate', name:'JsonToGate', desc:'JSON-LD to GATE converter', url:"${BASE_URL}/JsonToGate"]
+    [id:"convert.gate2json_${VERSION}", name:"GateToJson v${VERSION}", desc:"GATE to JSON-LD converter ", url:"${BASE_URL}/GateToJson"],
+    [id:"convert.json2gate_${VERSION}", name:"JsonToGate v${VERSION}", desc:"JSON-LD to GATE converter", url:"${BASE_URL}/JsonToGate"]
 ].each {
     register_converter(it)
 }

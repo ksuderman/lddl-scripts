@@ -22,13 +22,17 @@ include 'Setup'
 // Definitions of the MASC DataSource services
 include 'vassar/MASC'
 
+// Versions of the services to be registered
+DATASOURCES_VERSION='1.4.0'
+CONVERTERS_VERSION='0.3.3'
+GATE_VERSION='1.3.4'
+STANFORD_VERSION='1.3.2'
+
 // Definitions of the processing services available at Vassar.
-//include 'vassar/Datasources1.3.0'
-include 'vassar/Datasources1.4.0'
-include 'vassar/Converters0.3.1'
-include 'vassar/Gate1.3.2'
-//include 'vassar/OpenNLP'
-include 'vassar/Stanford1.3.1'
+include 'vassar/Datasources'
+include 'vassar/Converters'
+include 'vassar/Gate'
+include 'vassar/Stanford'
 include 'Users'
 
 news 'The ANC/Vassar LAPPS node has been configured via LDDL'

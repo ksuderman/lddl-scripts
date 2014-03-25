@@ -1,7 +1,7 @@
 /* Server on the LAPPS grid. */
 servers = [:]
 servers.test = 'http://localhost:9080'
-servers.localhost = 'http://localhost:8080'
+servers.localhost = 'http://localhost:9080'
 servers.vassar = 'http://grid.anc.org:9080'
 
 servers.default = servers.localhost
