@@ -1,0 +1,25 @@
+
+def VERSION=args.version ?: '1.0.0-SNAPSHOT'
+def URL="${servers.DEFAULT}/WordAlignment/${VERSION}/services/WordAlignment"
+def NAME = "Word Alignment v${VERSION}"
+
+service {
+	id "word-align-${VERSION}"
+	name NAME
+	url URL
+	protocol 'SOAP_RPC_ENCODED'
+	domain DOMAIN
+	type SERVICE
+	copyright COPYRIGHT
+	resource NONE_ID
+	license "Apache 2.0"
+	description "Aligns words with an existing text."
+	allow 'commercial', 'nonprofit', 'research'
+	control 'client', 'server'
+	federate true
+	attributes {
+		lang 'en-US'
+	}
+}
+news "Configured ${NAME}"
+
