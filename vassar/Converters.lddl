@@ -3,7 +3,7 @@ include "Common"
 include "Functions"
 include 'Servers'
 
-def VERSION = CONVERTERS_VERSION ?: args.version ?: '0.3.1'
+def VERSION = args.version ?: '0.4.0-SNAPSHOT'
 def BASE_URL = "${servers.DEFAULT}/GateConverter/${VERSION}/services/"
 
 [

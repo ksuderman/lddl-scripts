@@ -11,7 +11,7 @@
 
 if (args.username == null || args.password == null) {
    println "Please provide a username and password to use."
-   System.exit()
+   return
 }
 
 postgres {

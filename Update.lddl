@@ -7,6 +7,8 @@ if (args.size() == 0) {
 }
 
 args.each { module, ignored ->
-	println "Updating ${module}"
-	include module
+	if ('version' != module) {
+		println "Updating ${module}"
+		include module
+	}
 }
