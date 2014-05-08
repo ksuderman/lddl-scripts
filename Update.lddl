@@ -6,8 +6,9 @@ if (args.size() == 0) {
 	System.exit(1)
 }
 
+
 args.each { module, ignored ->
-	if ('version' != module) {
+	if ('version' != module && 'server' != module) {
 		println "Updating ${module}"
 		include module
 	}
