@@ -3,8 +3,7 @@ include 'Database'
 include 'Common'
 include 'Functions'
 
-//def VERSION= GATE_VERSION ?: args.version ?: '1.3.5-SNAPSHOT'
-def VERSION = args.version ?: '1.3.5-SNAPSHOT'
+def VERSION = args.version ?: '1.3.5'
 def ROOT="${servers.DEFAULT}/GateServices/${VERSION}/services"
 
 def allServices = [
