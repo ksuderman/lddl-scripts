@@ -1,5 +1,5 @@
 
-def VERSION=args.version ?: '1.0.0-SNAPSHOT'
+def VERSION=args.version ?: '1.0.0'
 def URL="${servers.DEFAULT}/WordAlignment/${VERSION}/services/WordAlignment"
 def NAME = "Word Alignment v${VERSION}"
 
