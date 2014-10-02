@@ -10,6 +10,10 @@ if (args.server) {
     if (servers[args.server]) {
         servers.default = servers[args.server]
     }
+    else {
+    	println "Unknown server: ${args.server}"
+    	System.exit(1)
+    }
 }
 servers.DEFAULT = servers.default
 println "Default server is ${servers.default}"

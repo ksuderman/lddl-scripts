@@ -1,4 +1,9 @@
-
+/*
+ * This script permits individual services to be updated (Gate, Stanford, etc.)
+ * while still allowing the user to specify the version and/or server
+ * to be used.
+ */
+ 
 COPYRIGHT = "Copyright 2014 American National Corpus"
 
 if (args.size() == 0) {

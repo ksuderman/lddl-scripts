@@ -5,6 +5,6 @@ if (args.size() == 0) {
 	System.exit(1)
 }
 
-args.each { modules ->
-	include module
+args.each { module,value ->
+	include module //"'${module}'"
 }

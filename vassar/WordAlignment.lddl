@@ -1,5 +1,14 @@
+include 'Servers'
+include 'Database'
+include 'Common'
 
-def VERSION=args.version ?: '1.0.0'
+//def VERSION=args.version ?: '1.0.0'
+
+if (!args.version) {
+	println "ERROR: Please provide a version number"
+	return
+}
+def VERSION=args.version
 def URL="${servers.DEFAULT}/WordAlignment/${VERSION}/services/WordAlignment"
 def NAME = "Word Alignment v${VERSION}"
 
