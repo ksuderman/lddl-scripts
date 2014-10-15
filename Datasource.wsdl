@@ -25,9 +25,24 @@
         <wsdl:part name="input" type="tns1:Data"/>
 
     </wsdl:message>
+   <wsdl:message name="getMetadataResponse">
+
+      <wsdl:part name="getMetadataReturn" type="tns1:Data"/>
+
+   </wsdl:message>
+   <wsdl:message name="getMetadataRequest">
+
+   </wsdl:message>
 
     <wsdl:portType name="MascDataSource">
 
+      <wsdl:operation name="getMetadata">
+
+         <wsdl:input message="impl:getMetadataRequest" name="getMetadataRequest"/>
+
+         <wsdl:output message="impl:getMetadataResponse" name="getMetadataResponse"/>
+
+      </wsdl:operation>
         <wsdl:operation name="query" parameterOrder="input">
 
             <wsdl:input message="impl:queryRequest" name="queryRequest"/>

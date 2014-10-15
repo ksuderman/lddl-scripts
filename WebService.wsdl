@@ -38,23 +38,12 @@
 
     </wsdl:message>
 
+<!--
     <wsdl:message name="requiresRequest">
 
     </wsdl:message>
 
-    <wsdl:message name="configureRequest">
-
-        <wsdl:part name="config" type="tns1:Data"/>
-
-    </wsdl:message>
-
     <wsdl:message name="producesRequest">
-
-    </wsdl:message>
-
-    <wsdl:message name="configureResponse">
-
-        <wsdl:part name="configureReturn" type="tns1:Data"/>
 
     </wsdl:message>
 
@@ -69,9 +58,37 @@
         <wsdl:part name="requiresReturn" type="impl:ArrayOf_xsd_long"/>
 
     </wsdl:message>
+-->
+    <wsdl:message name="configureRequest">
 
-    <wsdl:portType name="Tokenizer">
+        <wsdl:part name="config" type="tns1:Data"/>
 
+    </wsdl:message>
+
+    <wsdl:message name="configureResponse">
+
+        <wsdl:part name="configureReturn" type="tns1:Data"/>
+
+    </wsdl:message>
+   <wsdl:message name="getMetadataResponse">
+
+      <wsdl:part name="getMetadataReturn" type="tns1:Data"/>
+
+   </wsdl:message>
+   <wsdl:message name="getMetadataRequest">
+
+   </wsdl:message>
+
+
+    <wsdl:portType name="PROCESSOR">
+
+      <wsdl:operation name="getMetadata">
+
+         <wsdl:input message="impl:getMetadataRequest" name="getMetadataRequest"/>
+
+         <wsdl:output message="impl:getMetadataResponse" name="getMetadataResponse"/>
+
+      </wsdl:operation>
         <wsdl:operation name="execute" parameterOrder="input">
 
             <wsdl:input message="impl:executeRequest" name="executeRequest"/>
@@ -88,6 +105,7 @@
 
         </wsdl:operation>
 
+		<!--
         <wsdl:operation name="requires">
 
             <wsdl:input message="impl:requiresRequest" name="requiresRequest"/>
@@ -103,10 +121,10 @@
             <wsdl:output message="impl:producesResponse" name="producesResponse"/>
 
         </wsdl:operation>
-
+		-->
     </wsdl:portType>
 
-    <wsdl:binding name="TokenizerSoapBinding" type="impl:Tokenizer">
+    <wsdl:binding name="PROCESSORSoapBinding" type="impl:PROCESSOR">
 
         <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
 
@@ -146,6 +164,7 @@
 
         </wsdl:operation>
 
+<!--
         <wsdl:operation name="requires">
 
             <wsdlsoap:operation soapAction=""/>
@@ -181,7 +200,7 @@
             </wsdl:output>
 
         </wsdl:operation>
-
+-->
     </wsdl:binding>
 
     <wsdl:service name="anc:STANFORD_SPLITTER">
@@ -191,7 +210,6 @@
             <wsdlsoap:address location="http://grid.anc.org:8080/service_manager/invoker/anc:STANFORD_SPLITTER"/>
 
         </wsdl:port>
-
     </wsdl:service>
 
 </wsdl:definitions>
