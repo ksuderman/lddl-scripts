@@ -34,6 +34,7 @@ LINGPIPE_VERSION = '1.0.0-SNAPSHOT'
 
 // Definitions of the processing services available at Vassar.
 include 'vassar/Datasources'
+/*
 include 'vassar/Converters'
 include 'vassar/Gate'
 //include 'vassar/GateApplications'
@@ -41,6 +42,7 @@ include 'vassar/Stanford'
 include 'vassar/OnePerLine'
 include 'vassar/WordAlignment'
 include 'vassar/Groovy'
+*/
 include 'Users'
 
 news 'The ANC/Vassar LAPPS node has been configured via LDDL'
