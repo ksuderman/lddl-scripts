@@ -8,14 +8,15 @@ void register_datasources(list) {
     }
 }
 
-register_datasource = { source ->
+register_datasource = { source, serviceType ->
+	println "Registering datasource ${source.name}"
     service {
         id source.id
         name source.name
         url source.url
         protocol 'SOAP_RPC_ENCODED'
         domain DOMAIN
-        type DATASOURCE
+        type serviceType
         copyright COPYRIGHT
         resource MASC_ID
         license APACHE
