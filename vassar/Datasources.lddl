@@ -5,7 +5,7 @@ include 'Functions'
 
 MASC_ID = 'MASC-3.0.0'
 //def VERSION= DATASOURCES_VERSION ?: args.version ?: '1.4.2'
-def VERSION = args.version ?: '2.0.0-SNAPSHOT'
+def VERSION = args.version ?: '2.0.0'
 def BASE_URL="${servers.DEFAULT}/MascDataSource/${VERSION}/services"
 
 [
@@ -16,8 +16,9 @@ def BASE_URL="${servers.DEFAULT}/MascDataSource/${VERSION}/services"
     [id:"masc.json_${VERSION}", name:"MascJsonSource", desc:'Gold standard data from MASC in JSON-LD']
 ].each { service ->
     service.url = "${BASE_URL}/${service.name}"
-    def serviceTypeId = "service.type.${service.name.toLowerCase()}"
+    /*
     service.name = "${service.name} v${VERSION}"
+    def serviceTypeId = "service.type.${service.name.toLowerCase()}"
     serviceType {
 		id serviceTypeId
 		name service.name
@@ -32,6 +33,7 @@ def BASE_URL="${servers.DEFAULT}/MascDataSource/${VERSION}/services"
 		protocol 'SOAP_RPC_ENCODED'
 		url "${service.url}?wsdl"
 	}
-    register_datasource(service, serviceTypeId)
+	*/
+    register_datasource(service)
 }
 

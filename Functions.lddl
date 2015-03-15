@@ -8,19 +8,34 @@ void register_datasources(list) {
     }
 }
 
-register_datasource = { source, serviceType ->
-	println "Registering datasource ${source.name}"
+register_datasource = { s ->
+	println "Registering datasource ${s.name}"
+	def serviceTypeId = "service.type.${s.id.toLowerCase()}"
+    serviceType {
+		id serviceTypeId
+		name s.name
+		domain DOMAIN
+		description s.name
+		attributes 'service.meta.lang', 'service.meta.type'    
+	}
+	serviceInterfaceDefinition {
+		name "${s.name} Interface"
+		domain DOMAIN
+		type serviceTypeId
+		protocol 'SOAP_RPC_ENCODED'
+		url "${s.url}?wsdl"
+	}
     service {
-        id source.id
-        name source.name
-        url source.url
+        id s.id
+        name s.name
+        url s.url
         protocol 'SOAP_RPC_ENCODED'
         domain DOMAIN
-        type serviceType
+        type serviceTypeId
         copyright COPYRIGHT
         resource MASC_ID
         license APACHE
-        description source.desc
+        description s.desc
         allow 'commercial', 'nonprofit', 'research'
         control 'client', 'server'
 		federate true
@@ -28,7 +43,7 @@ register_datasource = { source, serviceType ->
         	lang 'en-US'
         }
     }
-    news "Configured ${source.name}"
+    news "Configured ${s.name}"
 }
 
 register_services = { list ->
@@ -37,6 +52,85 @@ register_services = { list ->
     }
 }
 
+register_service = { s ->
+	def serviceTypeId = "service.type.${s.id.toLowerCase()}"
+
+    serviceType {
+		id serviceTypeId
+		name s.name
+		domain DOMAIN
+		description s.name
+		attributes 'service.meta.lang', 'service.meta.type'    
+	}
+	serviceInterfaceDefinition {
+		name "${s.name} Interface"
+		domain DOMAIN
+		type serviceTypeId
+		protocol 'SOAP_RPC_ENCODED'
+		url "${s.url}?wsdl"
+	}
+	
+    service {
+        id s.id
+        name s.name
+        url s.url
+        protocol 'SOAP_RPC_ENCODED'
+        domain DOMAIN
+        type serviceTypeId
+        copyright COPYRIGHT
+        resource NONE_ID
+        license s.license
+        description s.desc
+        allow 'commercial', 'nonprofit', 'research'
+        control 'client', 'server'
+        federate true
+        attributes {
+        	lang 'en-US'
+        }
+    }
+    news "Configured ${s.name}"
+}	
+
+register_converter = { s ->
+	def serviceTypeId = "service.type.${s.id.toLowerCase()}"
+
+    serviceType {
+		id serviceTypeId
+		name s.name
+		domain DOMAIN
+		description s.name
+		attributes 'service.meta.lang', 'service.meta.type'    
+	}
+	serviceInterfaceDefinition {
+		name "${s.name} Interface"
+		domain DOMAIN
+		type serviceTypeId
+		protocol 'SOAP_RPC_ENCODED'
+		url "${s.url}?wsdl"
+	}
+	
+    service {
+        id s.id
+        name s.name
+        url s.url
+        protocol 'SOAP_RPC_ENCODED'
+        domain DOMAIN
+        type serviceTypeId
+        copyright COPYRIGHT
+        resource NONE_ID
+        license APACHE
+        description s.desc
+        allow 'commercial', 'nonprofit', 'research'
+        control 'client', 'server'
+        federate true
+        attributes {
+        	lang 'any'
+        }
+    }
+    news "Registered ${s.name}"
+}
+
+/*
 register_service = { svc ->
     service {
         id svc.id
@@ -80,3 +174,5 @@ register_converter = { converter ->
     }
     news "Registered ${converter.name}"
 }
+
+*/

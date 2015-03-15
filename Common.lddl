@@ -11,9 +11,14 @@ DOMAIN = 'lapps.nlp'
  * Currently LAPPS has two service types:
  *   1. data sources
  *   2. processing services
+ *
+ * @deprecated: each service now has its own service type
+ * and service interface defined automatically.  
+ * See the register_* functions Functions.lddl
+ *
  */
-SERVICE = 'service.type.processor'
-DATASOURCE = 'service.type.datasource'
+//SERVICE = 'service.type.processor'
+//DATASOURCE = 'service.type.datasource'
 
 /*
  * Resource types
