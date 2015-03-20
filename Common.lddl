@@ -17,8 +17,8 @@ DOMAIN = 'lapps.nlp'
  * See the register_* functions Functions.lddl
  *
  */
-//SERVICE = 'service.type.processor'
-//DATASOURCE = 'service.type.datasource'
+SERVICE = 'service.type.processor'
+DATASOURCE = 'service.type.datasource'
 
 /*
  * Resource types

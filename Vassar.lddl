@@ -22,12 +22,6 @@ include 'Setup'
 // Definitions of the MASC DataSource services
 include 'vassar/MASC'
 
-// Versions of the services to be registered
-//DATASOURCES_VERSION='1.4.1'
-CONVERTERS_VERSION='2.0.0'
-GATE_VERSION='2.0.0'
-STANFORD_VERSION='2.0.0'
-
 // Definitions of the processing services available at Vassar.
 include 'vassar/Datasources'
 include 'vassar/Converters'

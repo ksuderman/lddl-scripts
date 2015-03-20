@@ -70,6 +70,24 @@ register_service = { s ->
 		url "${s.url}?wsdl"
 	}
 	
+	/*
+	serviceMetaAttribute {
+		id "${serviceTypeId}.lang"
+		name 'Service language'
+		domain DOMAIN
+		//type SERVICE
+		type serviceTypeId
+		description 'The language(s) the service is able to process.'
+	}
+
+	serviceMetaAttribute {
+		id "${serviceTypeId}.type"
+		name 'Service type'
+		domain DOMAIN
+		type serviceTypeId
+		description 'The type of service (POS tagger, sentence splitter, etc.)'
+	}	
+	*/
     service {
         id s.id
         name s.name
