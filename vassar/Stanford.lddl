@@ -16,6 +16,7 @@ def ROOT="${servers.DEFAULT}/StanfordServices/${VERSION}/services"
     it.name = "Stanford ${it.name} v${VERSION}"
     register_service(it)
 }
+
 // There is no standalone sentence splitter.
 [
     [id:"stanford.splitter_${VERSION}", name:'SentenceSplitter', desc:'Stanford SentenceSplitter', license:'GPL'],
