@@ -10,14 +10,14 @@ include 'Database'
 def wsdlWebService='WebService.wsdl'
 def wsdlDataSource='Datasource.wsdl'
 
-import static groovy.io.FileType.FILES
-new File('.').eachFileRecurse(FILES) {
-    if(it.name.endsWith(wsdlWebService))
-        wsdlWebService = it.getAbsolutePath()
-
-    if(it.name.endsWith(wsdlDataSource))
-        wsdlDataSource = it.getAbsolutePath()
-}
+//import static groovy.io.FileType.FILES
+//new File('.').eachFileRecurse(FILES) {
+//    if(it.name.endsWith(wsdlWebService))
+//        wsdlWebService = it.getAbsolutePath()
+//
+//    if(it.name.endsWith(wsdlDataSource))
+//        wsdlDataSource = it.getAbsolutePath()
+//}
 
 serviceInterfaceDefinition {
     name 'LAPPS DataSource'

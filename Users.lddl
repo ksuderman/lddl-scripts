@@ -18,23 +18,23 @@ include 'Database'
 */
 
 user {
-    id 'tester'
-    password 'tester'
-    name 'Tester'
-    address 'New York'
-    email 'tester@anc.org'
-    homepage 'http://tester.anc.org'
-    organization 'tester'
+    id 'brandeis'
+    password 'brandeis123'
+    name 'Bradeis'
+    address 'Waltham, MA'
+    email 'someone@brandeis.edu'
+    homepage 'http://www.lappsgrid.org'
+    organization 'Brandeis University'
 }
 
 user {
-    id 'guest'
-    password 'guest1'
-    name 'Guest'
-    address 'New York'
-    email 'guest@anc.org'
-    homepage 'http://guest.anc.org'
-    organization 'Guest'
+    id 'kyoto'
+    password 'kyoto123'
+    name 'Kyoto'
+    address 'Kyoto, Japan'
+    email 'someone@kyoto-u.ac.jp'
+    homepage 'http://langrid.org'
+    organization 'Kyoto University'
 }
 
-news 'Registered test and guest users.'
+news 'Registered users for Kyoto and Brandies universities.'

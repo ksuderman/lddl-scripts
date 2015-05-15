@@ -4,9 +4,9 @@
 include 'Common'
 include 'Database'
 include 'Domains'
-include 'Protocols'
+//include 'Protocols'
 include 'Resource'
 include 'Service'
-//include 'Interfaces'
+include 'Interfaces'
 
 news 'The LAPPS base types have been configured via LDDL'

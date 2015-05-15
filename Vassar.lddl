@@ -13,7 +13,7 @@ else {
 	include 'DatabaseSetup'
 }
 
-COPYRIGHT = 'Copyright 2014 American National Corpus'
+COPYRIGHT = 'Copyright 2015 American National Corpus'
 
 // The Setup script includes the common LAPPS definitions for resource and 
 // service types, and meta-attribues.
