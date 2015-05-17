@@ -7,7 +7,7 @@ include 'Database'
 
 domain {
 	id DOMAIN
-	name 'Natural Language Processing'
+	name 'LAPPS Natural Language Processing'
 	description 'NLP tasks related to LAPPS.'
 }
 news "Domain added: ${DOMAIN}"
