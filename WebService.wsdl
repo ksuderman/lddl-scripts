@@ -1,86 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" xmlns:intf="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="uri:org.lappsgrid.api/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!--WSDL created by Apache Axis version: 1.4
-    Built on Apr 22, 2006 (06:55:48 PDT)-->
-    <wsdl:types>
-        <schema targetNamespace="uri:org.lappsgrid.api/" xmlns="http://www.w3.org/2001/XMLSchema">
-            <import namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR"/>
-            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
-            <complexType name="Data">
-                <sequence>
-                    <element name="discriminator" type="xsd:long"/>
-                    <element name="payload" nillable="true" type="xsd:string"/>
-                </sequence>
-            </complexType>
-        </schema>
-        <schema targetNamespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" xmlns="http://www.w3.org/2001/XMLSchema">
-            <import namespace="uri:org.lappsgrid.api/"/>
-            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
-            <complexType name="ArrayOf_xsd_long">
-                <complexContent>
-                    <restriction base="soapenc:Array">
-                        <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:long[]"/>
-                    </restriction>
-                </complexContent>
-            </complexType>
-        </schema>
-    </wsdl:types>
+<wsdl:definitions targetNamespace="servicegrid:servicetype:lapps.nlp:AbstractService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="servicegrid:servicetype:lapps.nlp:AbstractService" xmlns:intf="servicegrid:servicetype:lapps.nlp:AbstractService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
 
-    <wsdl:message name="executeResponse">
-
-        <wsdl:part name="executeReturn" type="tns1:Data"/>
-
-    </wsdl:message>
-
-    <wsdl:message name="executeRequest">
-
-        <wsdl:part name="input" type="tns1:Data"/>
-
-    </wsdl:message>
-
-<!--
-    <wsdl:message name="requiresRequest">
-
-    </wsdl:message>
-
-    <wsdl:message name="producesRequest">
-
-    </wsdl:message>
-
-    <wsdl:message name="producesResponse">
-
-        <wsdl:part name="producesReturn" type="impl:ArrayOf_xsd_long"/>
-
-    </wsdl:message>
-
-    <wsdl:message name="requiresResponse">
-
-        <wsdl:part name="requiresReturn" type="impl:ArrayOf_xsd_long"/>
-
-    </wsdl:message>
--->
-    <wsdl:message name="configureRequest">
-
-        <wsdl:part name="config" type="tns1:Data"/>
-
-    </wsdl:message>
-
-    <wsdl:message name="configureResponse">
-
-        <wsdl:part name="configureReturn" type="tns1:Data"/>
-
-    </wsdl:message>
-   <wsdl:message name="getMetadataResponse">
-
-      <wsdl:part name="getMetadataReturn" type="tns1:Data"/>
-
-   </wsdl:message>
    <wsdl:message name="getMetadataRequest">
 
    </wsdl:message>
 
+   <wsdl:message name="executeRequest">
 
-    <wsdl:portType name="PROCESSOR">
+      <wsdl:part name="input" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMetadataResponse">
+
+      <wsdl:part name="getMetadataReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeResponse">
+
+      <wsdl:part name="executeReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AbstractService">
 
       <wsdl:operation name="getMetadata">
 
@@ -89,127 +34,67 @@
          <wsdl:output message="impl:getMetadataResponse" name="getMetadataResponse"/>
 
       </wsdl:operation>
-        <wsdl:operation name="execute" parameterOrder="input">
 
-            <wsdl:input message="impl:executeRequest" name="executeRequest"/>
+      <wsdl:operation name="execute" parameterOrder="input">
 
-            <wsdl:output message="impl:executeResponse" name="executeResponse"/>
+         <wsdl:input message="impl:executeRequest" name="executeRequest"/>
 
-        </wsdl:operation>
+         <wsdl:output message="impl:executeResponse" name="executeResponse"/>
 
-        <wsdl:operation name="configure" parameterOrder="config">
+      </wsdl:operation>
 
-            <wsdl:input message="impl:configureRequest" name="configureRequest"/>
+   </wsdl:portType>
 
-            <wsdl:output message="impl:configureResponse" name="configureResponse"/>
+   <wsdl:binding name="AbstractServiceSoapBinding" type="impl:AbstractService">
 
-        </wsdl:operation>
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-		<!--
-        <wsdl:operation name="requires">
+      <wsdl:operation name="getMetadata">
 
-            <wsdl:input message="impl:requiresRequest" name="requiresRequest"/>
+         <wsdlsoap:operation soapAction=""/>
 
-            <wsdl:output message="impl:requiresResponse" name="requiresResponse"/>
+         <wsdl:input name="getMetadataRequest">
 
-        </wsdl:operation>
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:lapps.nlp:AbstractService" use="encoded"/>
 
-        <wsdl:operation name="produces">
+         </wsdl:input>
 
-            <wsdl:input message="impl:producesRequest" name="producesRequest"/>
+         <wsdl:output name="getMetadataResponse">
 
-            <wsdl:output message="impl:producesResponse" name="producesResponse"/>
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:lapps.nlp:AbstractService" use="encoded"/>
 
-        </wsdl:operation>
-		-->
-    </wsdl:portType>
+         </wsdl:output>
 
-    <wsdl:binding name="PROCESSORSoapBinding" type="impl:PROCESSOR">
+      </wsdl:operation>
 
-        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="execute">
 
-        <wsdl:operation name="execute">
+         <wsdlsoap:operation soapAction=""/>
 
-            <wsdlsoap:operation soapAction=""/>
+         <wsdl:input name="executeRequest">
 
-            <wsdl:input name="executeRequest">
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:lapps.nlp:AbstractService" use="encoded"/>
 
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" use="encoded"/>
+         </wsdl:input>
 
-            </wsdl:input>
+         <wsdl:output name="executeResponse">
 
-            <wsdl:output name="executeResponse">
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:lapps.nlp:AbstractService" use="encoded"/>
 
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" use="encoded"/>
+         </wsdl:output>
 
-            </wsdl:output>
+      </wsdl:operation>
 
-        </wsdl:operation>
+   </wsdl:binding>
 
-        <wsdl:operation name="configure">
+   <wsdl:service name="anc:AbstractService">
 
-            <wsdlsoap:operation soapAction=""/>
+      <wsdl:port binding="impl:AbstractServiceSoapBinding" name="AbstractService">
 
-            <wsdl:input name="configureRequest">
+         <wsdlsoap:address location="http://grid.anc.org:8080/service_manager/invoker/anc:AbstractService"/>
 
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" use="encoded"/>
+      </wsdl:port>
 
-            </wsdl:input>
-
-            <wsdl:output name="configureResponse">
-
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" use="encoded"/>
-
-            </wsdl:output>
-
-        </wsdl:operation>
-
-<!--
-        <wsdl:operation name="requires">
-
-            <wsdlsoap:operation soapAction=""/>
-
-            <wsdl:input name="requiresRequest">
-
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" use="encoded"/>
-
-            </wsdl:input>
-
-            <wsdl:output name="requiresResponse">
-
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" use="encoded"/>
-
-            </wsdl:output>
-
-        </wsdl:operation>
-
-        <wsdl:operation name="produces">
-
-            <wsdlsoap:operation soapAction=""/>
-
-            <wsdl:input name="producesRequest">
-
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" use="encoded"/>
-
-            </wsdl:input>
-
-            <wsdl:output name="producesResponse">
-
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:PROCESSOR" use="encoded"/>
-
-            </wsdl:output>
-
-        </wsdl:operation>
--->
-    </wsdl:binding>
-
-    <wsdl:service name="anc:STANFORD_SPLITTER">
-
-        <wsdl:port binding="impl:TokenizerSoapBinding" name="Tokenizer">
-
-            <wsdlsoap:address location="http://grid.anc.org:8080/service_manager/invoker/anc:STANFORD_SPLITTER"/>
-
-        </wsdl:port>
-    </wsdl:service>
+   </wsdl:service>
 
 </wsdl:definitions>

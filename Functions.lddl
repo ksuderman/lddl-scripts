@@ -10,18 +10,10 @@ void register_datasources(list) {
 
 register_datasource = { s ->
 	println "Registering datasource ${s.name}"
-	def serviceTypeId = "service.type.${s.id.toLowerCase()}"
-    serviceType {
-		id serviceTypeId
-		name s.name
-		domain DOMAIN
-		description s.name
-		attributes 'service.meta.lang', 'service.meta.type'    
-	}
 	serviceInterfaceDefinition {
 		name "${s.name} Interface"
 		domain DOMAIN
-		type serviceTypeId
+		type DATASOURCE
 		protocol 'SOAP_RPC_ENCODED'
 		url "${s.url}?wsdl"
 	}
@@ -31,7 +23,7 @@ register_datasource = { s ->
         url s.url
         protocol 'SOAP_RPC_ENCODED'
         domain DOMAIN
-        type serviceTypeId
+        type DATASOURCE
         copyright COPYRIGHT
         resource MASC_ID
         license APACHE
@@ -53,48 +45,21 @@ register_services = { list ->
 }
 
 register_service = { s ->
-	def serviceTypeId = "service.type.${s.id.toLowerCase()}"
-
-    serviceType {
-		id serviceTypeId
-		name s.name
-		domain DOMAIN
-		description s.name
-		attributes 'service.meta.lang', 'service.meta.type'    
-	}
 	serviceInterfaceDefinition {
 		name "${s.name} Interface"
 		domain DOMAIN
-		type serviceTypeId
+		type SERVICE
 		protocol 'SOAP_RPC_ENCODED'
 		url "${s.url}?wsdl"
 	}
 	
-	/*
-	serviceMetaAttribute {
-		id "${serviceTypeId}.lang"
-		name 'Service language'
-		domain DOMAIN
-		//type SERVICE
-		type serviceTypeId
-		description 'The language(s) the service is able to process.'
-	}
-
-	serviceMetaAttribute {
-		id "${serviceTypeId}.type"
-		name 'Service type'
-		domain DOMAIN
-		type serviceTypeId
-		description 'The type of service (POS tagger, sentence splitter, etc.)'
-	}	
-	*/
     service {
         id s.id
         name s.name
         url s.url
         protocol 'SOAP_RPC_ENCODED'
         domain DOMAIN
-        type serviceTypeId
+        type SERVICE
         copyright COPYRIGHT
         resource NONE_ID
         license s.license
@@ -110,19 +75,10 @@ register_service = { s ->
 }	
 
 register_converter = { s ->
-	def serviceTypeId = "service.type.${s.id.toLowerCase()}"
-
-    serviceType {
-		id serviceTypeId
-		name s.name
-		domain DOMAIN
-		description s.name
-		attributes 'service.meta.lang', 'service.meta.type'    
-	}
 	serviceInterfaceDefinition {
 		name "${s.name} Interface"
 		domain DOMAIN
-		type serviceTypeId
+		type SERVICE
 		protocol 'SOAP_RPC_ENCODED'
 		url "${s.url}?wsdl"
 	}
@@ -133,7 +89,7 @@ register_converter = { s ->
         url s.url
         protocol 'SOAP_RPC_ENCODED'
         domain DOMAIN
-        type serviceTypeId
+        type SERVICE
         copyright COPYRIGHT
         resource NONE_ID
         license APACHE
