@@ -1,21 +1,18 @@
 include 'Common'
 include 'Database'
 
-/* Register users for each of the ANC nodes. */
-/*
-[2,3,4].each { n ->
-	user {
-		id "anc${n}"
-		password 'password'
-		name 'Keith Suderman'
-		address 'New York'
-		email 'suderman@anc.org'
-		homepage "http://${n}.anc.org:8080/service_manager"
-		organization "ANC ${n}"
-	}
-	news "Registered user anc${n}"
+// The operator name as defined in the service_manager.xml file.
+ROOT = 'operator'
+
+user {
+	id 'vassar'
+	password 'vassar123'
+	name 'Vassar'
+	address 'Poughkeepsie, NY'
+	email 'ide@cs.vassar.edu'
+	homepage 'http://www.anc.org'
+	organization 'Vassar College'
 }
-*/
 
 user {
     id 'brandeis'
@@ -37,4 +34,12 @@ user {
     organization 'Kyoto University'
 }
 
+temporaryUser {
+	name 'tester'
+	password 'tester'
+	duration 366.days
+	owner ROOT
+}
+
 news 'Registered users for Kyoto and Brandies universities.'
+news 'Created temporary user tester'

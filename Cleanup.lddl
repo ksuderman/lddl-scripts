@@ -10,6 +10,8 @@ include 'Database'
 
 data = [
     [table:'serviceendpoint', column:'gridid', value:GRID_ID],
+    [table:'accessright', column:'servicegridid', value:GRID_ID],
+    [table:'temporaryuser', column:'gridid', value:GRID_ID],
     [table:'service_alloweduse', column:'service_gridid', value:GRID_ID],
     [table:'service_allowedappprovision', column:'service_gridid', value:GRID_ID],
     [table:'serviceattribute', column:'gridid', value:GRID_ID],
