@@ -1,2 +1,0 @@
-Reverting to using two abstract wsdl files for ProcessingService and DataSource
-rather than one service type per service.
