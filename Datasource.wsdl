@@ -1,40 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:DATASOURCE" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:DATASOURCE" xmlns:intf="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:DATASOURCE" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="uri:org.lappsgrid.api/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!--WSDL created by Apache Axis version: 1.4
-    Built on Apr 22, 2006 (06:55:48 PDT)-->
-    <wsdl:types>
-        <schema targetNamespace="uri:org.lappsgrid.api/" xmlns="http://www.w3.org/2001/XMLSchema">
-            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
-            <complexType name="Data">
-                <sequence>
-                    <element name="discriminator" type="xsd:long"/>
-                    <element name="payload" nillable="true" type="xsd:string"/>
-                </sequence>
-            </complexType>
-        </schema>
-    </wsdl:types>
+<wsdl:definitions targetNamespace="servicegrid:servicetype:lapps.nlp:AbstractDatasource" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="servicegrid:servicetype:lapps.nlp:AbstractDatasource" xmlns:intf="servicegrid:servicetype:lapps.nlp:AbstractDatasource" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
 
-    <wsdl:message name="queryResponse">
-
-        <wsdl:part name="queryReturn" type="tns1:Data"/>
-
-    </wsdl:message>
-
-    <wsdl:message name="queryRequest">
-
-        <wsdl:part name="input" type="tns1:Data"/>
-
-    </wsdl:message>
-   <wsdl:message name="getMetadataResponse">
-
-      <wsdl:part name="getMetadataReturn" type="tns1:Data"/>
-
-   </wsdl:message>
    <wsdl:message name="getMetadataRequest">
 
    </wsdl:message>
 
-    <wsdl:portType name="MascDataSource">
+   <wsdl:message name="executeRequest">
+
+      <wsdl:part name="input" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMetadataResponse">
+
+      <wsdl:part name="getMetadataReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeResponse">
+
+      <wsdl:part name="executeReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AbstractDatasource">
 
       <wsdl:operation name="getMetadata">
 
@@ -43,48 +34,67 @@
          <wsdl:output message="impl:getMetadataResponse" name="getMetadataResponse"/>
 
       </wsdl:operation>
-        <wsdl:operation name="query" parameterOrder="input">
 
-            <wsdl:input message="impl:queryRequest" name="queryRequest"/>
+      <wsdl:operation name="execute" parameterOrder="input">
 
-            <wsdl:output message="impl:queryResponse" name="queryResponse"/>
+         <wsdl:input message="impl:executeRequest" name="executeRequest"/>
 
-        </wsdl:operation>
+         <wsdl:output message="impl:executeResponse" name="executeResponse"/>
 
-    </wsdl:portType>
+      </wsdl:operation>
 
-    <wsdl:binding name="MascDataSourceSoapBinding" type="impl:MascDataSource">
+   </wsdl:portType>
 
-        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+   <wsdl:binding name="AbstractDatasourceSoapBinding" type="impl:AbstractDatasource">
 
-        <wsdl:operation name="query">
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-            <wsdlsoap:operation soapAction=""/>
+      <wsdl:operation name="getMetadata">
 
-            <wsdl:input name="queryRequest">
+         <wsdlsoap:operation soapAction=""/>
 
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:DATASOURCE" use="encoded"/>
+         <wsdl:input name="getMetadataRequest">
 
-            </wsdl:input>
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:lapps.nlp:AbstractDatasource" use="encoded"/>
 
-            <wsdl:output name="queryResponse">
+         </wsdl:input>
 
-                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:NATURAL_LANGUAGE_PROCESSING:DATASOURCE" use="encoded"/>
+         <wsdl:output name="getMetadataResponse">
 
-            </wsdl:output>
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:lapps.nlp:AbstractDatasource" use="encoded"/>
 
-        </wsdl:operation>
+         </wsdl:output>
 
-    </wsdl:binding>
+      </wsdl:operation>
 
-    <wsdl:service name="anc:MASC_DATA">
+      <wsdl:operation name="execute">
 
-        <wsdl:port binding="impl:MascDataSourceSoapBinding" name="MascDataSource">
+         <wsdlsoap:operation soapAction=""/>
 
-            <wsdlsoap:address location="http://grid.anc.org:8080/service_manager/invoker/anc:MASC_DATA"/>
+         <wsdl:input name="executeRequest">
 
-        </wsdl:port>
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:lapps.nlp:AbstractDatasource" use="encoded"/>
 
-    </wsdl:service>
+         </wsdl:input>
+
+         <wsdl:output name="executeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="servicegrid:servicetype:lapps.nlp:AbstractDatasource" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="anc:AbstractDatasource">
+
+      <wsdl:port binding="impl:AbstractDatasourceSoapBinding" name="AbstractDatasource">
+
+         <wsdlsoap:address location="http://grid.anc.org:8080/service_manager/invoker/anc:AbstractDatasource"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
 
 </wsdl:definitions>
