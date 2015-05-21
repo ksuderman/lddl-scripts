@@ -1,0 +1,66 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+
+def VERSION = "2.0.0"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/opennlp-web-service/${VERSION}/services"
+
+License = 'Apache License, Version 2.0'
+
+
+services = [
+    [
+      id:'opennlp.postagger',
+      name:"OpenNLP (v${VERSION}) POSTagger",
+      url:"${ROOT}/POSTagger",
+      desc:'OpenNLP POSTagger',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'opennlp.tokenizer',
+      name:"OpenNLP (v${VERSION}) Tokenizer",
+      url:"${ROOT}/Tokenizer",
+      desc:'OpenNLP Tokenizer',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'opennlp.namedentityrecognizer',
+      name:"OpenNLP (v${VERSION}) NamedEntityRecognizer",
+      url:"${ROOT}/NamedEntityRecognizer",
+      desc:'OpenNLP NamedEntityRecognizer',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'opennlp.splitter',
+      name:"OpenNLP (v${VERSION}) Splitter",
+      url:"${ROOT}/Splitter",
+      desc:'OpenNLP Splitter',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'opennlp.parser',
+      name:"OpenNLP (v${VERSION}) Parser",
+      url:"${ROOT}/Parser",
+      desc:'OpenNLP Parser',
+      lang:'(English)',
+      license:License
+    ]
+]
+
+
+
+
+services.each {
+    comment it.name
+    register_service(it)
+}

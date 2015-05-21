@@ -34,6 +34,6 @@ include 'vassar/OnePerLine'
 include 'vassar/WordAlignment'
 include 'vassar/Groovy'
 */
-include 'Users'
+include 'vassar/Users'
 
 news 'The ANC/Vassar LAPPS node has been configured via LDDL'
