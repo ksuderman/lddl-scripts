@@ -54,9 +54,17 @@ services = [
       desc:'OpenNLP Parser',
       lang:'(English)',
       license:License
-    ]
-]
+    ],
 
+    [
+      id:'opennlp.coref',
+      name:"OpenNLP (v${VERSION}) Coreference",
+      url:"${ROOT}/Coreference",
+      desc:'OpenNLP Coreference',
+      lang:'(English)',
+      license:License
+    ],
+]
 
 
 
