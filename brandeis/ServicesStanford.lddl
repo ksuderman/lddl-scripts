@@ -5,8 +5,8 @@ include 'Functions'
 
 
 
-def VERSION="0.0.2"
-def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/stanfordnlp-web-service/services"
+def VERSION= args.version ?: "2.0.0"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/stanfordnlp-web-service/${VERSION}/services"
 
 //def ROOT="${servers.DEFAULT}/StanfordServices/${VERSION}/services"
 
@@ -15,11 +15,11 @@ License = 'GNU General Public License (v2 or later)'
 
 services = [
     [
-      id:'stanfordnlp.postagger',
+      id:'stanfordnlp.postagger",
       name:"Stanford (v${VERSION}) NLP POSTagger",
       url:"${ROOT}/POSTagger",
       desc:'Stanford NLP POSTagger',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -28,7 +28,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP Tokenizer",
       url:"${ROOT}/Tokenizer",
       desc:'Stanford NLP Tokenizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -37,7 +37,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP NamedEntityRecognizer",
       url:"${ROOT}/NamedEntityRecognizer",
       desc:'Stanford NLP NamedEntityRecognizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -46,7 +46,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP Splitter",
       url:"${ROOT}/Splitter",
       desc:'Stanford NLP Splitter',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -55,7 +55,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP Parser",
       url:"${ROOT}/Parser",
       desc:'Stanford NLP Parser',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -66,5 +66,6 @@ services = [
 
 services.each {
     comment it.name
+    it.id = "${it.id}_${VERSION}"
     register_service(it)
 }
