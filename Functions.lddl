@@ -9,6 +9,7 @@ void register_datasources(list) {
 }
 
 register_datasource = { s ->
+	def language = s.lang ?: 'en-US'
 	println "Registering datasource ${s.name}"
 	serviceInterfaceDefinition {
 		name "${s.name} Interface"
@@ -32,7 +33,7 @@ register_datasource = { s ->
         control 'client', 'server'
 		federate true
         attributes {
-        	lang 'en-US'
+        	lang language
         }
     }
     news "Configured ${s.name}"
@@ -52,7 +53,8 @@ register_service = { s ->
 		protocol 'SOAP_RPC_ENCODED'
 		url "${s.url}?wsdl"
 	}
-	
+
+	def language = s.lang ?: 'en-US'	
     service {
         id s.id
         name s.name
@@ -68,7 +70,7 @@ register_service = { s ->
         control 'client', 'server'
         federate true
         attributes {
-        	lang 'en-US'
+        	lang language
         }
     }
     news "Configured ${s.name}"

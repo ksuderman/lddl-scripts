@@ -1,0 +1,15 @@
+include 'Common'
+include 'Database'
+
+resource {
+    id NONE_ID
+    copyright COPYRIGHT
+    license APACHE
+    description 'A resource for services that do not require a resource.'
+    name 'None'
+    domain DOMAIN
+    type NONE_TYPE
+    attributes {
+    	lang 'none'
+    }
+}
