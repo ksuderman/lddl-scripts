@@ -12,7 +12,8 @@ if (args.server) {
     }
     else {
     	println "Unknown server: ${args.server}"
-    	System.exit(1)
+    	//System.exit(1)
+    	servers.default = args.server
     }
 }
 servers.DEFAULT = servers.default
