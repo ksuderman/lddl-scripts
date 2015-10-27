@@ -15,7 +15,7 @@ License = 'GNU General Public License (v2 or later)'
 
 services = [
     [
-      id:'stanfordnlp.postagger",
+      id:'stanfordnlp.postagger',
       name:"Stanford (v${VERSION}) NLP POSTagger",
       url:"${ROOT}/POSTagger",
       desc:'Stanford NLP POSTagger',
