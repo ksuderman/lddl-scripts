@@ -4,7 +4,7 @@ include 'Common'
 include 'Functions'
 
 
-def VERSION = "2.0.1"
+def VERSION = "0.0.1"
 def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/uima.dkpro/${VERSION}/services"
 
 License = 'Apache License, Version 2.0'
