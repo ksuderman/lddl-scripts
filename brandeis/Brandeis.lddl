@@ -25,6 +25,8 @@ include 'brandeis/ServicesOpenNLP2.0.0'
 include 'brandeis/ServicesOpenNLP2.0.1'
 include 'brandeis/ServicesStanford2.0.0'
 include 'brandeis/ServicesStanford2.0.1'
+include 'brandeis/ServicesUima0.0.1'
+include 'brandeis/ServicesGate0.0.1'
 
 include 'brandeis/Users'
 
