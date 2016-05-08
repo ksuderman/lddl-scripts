@@ -4,7 +4,7 @@ include 'Common'
 include 'Functions'
 
 MASC_ID = 'MASC-3.0.0'
-def VERSION = args.version ?: '2.0.0'
+def VERSION = args.version ?: '2.2.0'
 def BASE_URL="${servers.DEFAULT}/MascDataSource/${VERSION}/services"
 
 [
