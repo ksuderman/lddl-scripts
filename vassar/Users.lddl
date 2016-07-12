@@ -4,6 +4,7 @@ include 'Database'
 // The operator name as defined in the service_manager.xml file.
 ROOT = 'operator'
 
+/*
 user {
 	id 'vassar'
 	password 'vassar123'
@@ -33,6 +34,7 @@ user {
     homepage 'http://langrid.org'
     organization 'Kyoto University'
 }
+*/
 
 temporaryUser {
 	name 'tester'

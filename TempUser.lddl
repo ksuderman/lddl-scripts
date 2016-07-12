@@ -2,9 +2,8 @@ include 'Common'
 include 'Database'
 
 // The operator name as defined in the service_manager.xml file.
-ROOT = 'suderman'
+ROOT = 'operator'
 
-sql "delete from temporaryuser where userid = 'tester'"
 temporaryUser {
 	name 'tester'
 	password 'tester'
@@ -12,4 +11,4 @@ temporaryUser {
 	owner ROOT
 }
 
-comment 'Created temporary user tester'
+news 'Created temporary user tester'
