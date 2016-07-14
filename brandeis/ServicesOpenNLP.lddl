@@ -62,6 +62,6 @@ services = [
 
 services.each {
     comment it.name
-    it.id = "brandeis.${it.id}_${VERSION}"
+    it.id = "${it.id}_${VERSION}"
     register_service(it)
 }
