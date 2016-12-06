@@ -4,8 +4,8 @@ include 'Common'
 include 'Functions'
 
 
-def VERSION = "2.0.2-SNAPSHOT"
-def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/opennlp-web-service/${VERSION}/services"
+def VERSION = "2.0.2"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/opennlp-web-service/${VERSION}-SNAPSHOT/services"
 
 License = 'Apache License, Version 2.0'
 
