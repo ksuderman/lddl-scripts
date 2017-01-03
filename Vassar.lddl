@@ -3,6 +3,7 @@
  * script configures the types, interfaces and services available.
  */
 include 'Servers'
+inlcude 'Copyright'
 
 if (args.clean) {
 	println "Cleaning the database"
@@ -13,7 +14,7 @@ else {
 	include 'DatabaseSetup'
 }
 
-COPYRIGHT = 'Copyright 2015 American National Corpus'
+//COPYRIGHT = 'Copyright 2017 American National Corpus'
 
 // The Setup script includes the common LAPPS definitions for resource and 
 // service types, and meta-attribues.

@@ -1,0 +1,1 @@
+COPYRIGHT = "Copyright ${new Date().format('yyyy')} Language Application Grid"
