@@ -1,0 +1,14 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def BASE_URL="${servers.DEFAULT}/EvaluationServices/services/AnnotationEvaluator"
+
+[
+    [id:"oaqa", name:"Annotation Evaluation", desc:'Evaluation components OAQA.']
+].each { service ->
+    service.url = "${BASE_URL}/${service.name}"
+    register_datasource(service)
+}
+

@@ -59,10 +59,16 @@ services = [
       license:License
     ],
 
+    [
+      id:'stanfordnlp.dependencyparser',
+      name:"Stanford (v${VERSION}) NLP Dependency Parser",
+      url:"${ROOT}/Parser",
+      desc:'Stanford NLP Parser',
+      lang:'en',
+      license:License
+    ]
+
 ]
-
-
-
 
 services.each {
     comment it.name
