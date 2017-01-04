@@ -7,8 +7,13 @@ include 'Servers'
 COPYRIGHT = 'Copyright 2015 Brandeis University'
 
 // Definitions of the processing services available at Brandeis University.
-include 'brandeis/ServicesOpenNLP2.0.0'
-include 'brandeis/ServicesStanford2.0.0'
+include 'brandeis/Resource'
+include 'brandeis/ServicesOpenNLP2.0.2'
+include 'brandeis/ServicesStanford2.0.1'
+include 'brandeis/ServicesUima0.0.1'
+include 'brandeis/ServicesGate0.0.1'
+include 'brandeis/ServicesReverb1.0.0'
+//include 'brandeis/ServicesClearNLP1.0.0'
 
 news 'The Brandeis node has been configured via LDDL'
 

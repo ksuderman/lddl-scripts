@@ -1,0 +1,62 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+
+
+def VERSION= args.version ?: "1.0.0"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/clearnlp-web-service/${VERSION}/services"
+
+//def ROOT="${servers.DEFAULT}/ClearNLPServices/${VERSION}/services"
+
+License = 'Apache License, Version 2.0'
+
+
+services = [
+    [
+      id:'clearnlp.postagger',
+      name:"ClearNLP (v${VERSION}) POSTagger",
+      url:"${ROOT}/POSTagger",
+      desc:'ClearNLP POSTagger',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'clearnlp.tokenizer',
+      name:"ClearNLP (v${VERSION}) Tokenizer",
+      url:"${ROOT}/Tokenizer",
+      desc:'ClearNLP Tokenizer',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'clearnlp.dependencyparser',
+      name:"ClearNLP (v${VERSION}) DependencyParser",
+      url:"${ROOT}/DependencyParser",
+      desc:'ClearNLP DependencyParser',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'clearnlp.semanticrolelabeler',
+      name:"ClearNLP (v${VERSION}) SemanticRoleLabeler",
+      url:"${ROOT}/SemanticRoleLabeler",
+      desc:'ClearNLP SemanticRoleLabeler',
+      lang:'en',
+      license:License
+    ],
+
+]
+
+
+
+
+services.each {
+    comment it.name
+    it.id = "${it.id}_${VERSION}"
+    register_service(it)
+}
