@@ -1,0 +1,92 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+
+def VERSION = "0.0.1"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/gate/${VERSION}/services"
+
+License = 'Apache License, Version 2.0'
+
+
+services = [
+
+    [
+      id:'gate.opennlp.splitter',
+      name:"Gate OpenNLP (v${VERSION}) Splitter",
+      url:"${ROOT}/GateOpenNlpSplitter",
+      desc:'Gate OpenNLP Splitter',
+      lang:'(English)',
+      license:License
+    ],
+    [
+      id:'gate.opennlp.tokenizer',
+      name:"Gate OpenNLP (v${VERSION}) Tokenizer",
+      url:"${ROOT}/GateOpenNlpTokenizer",
+      desc:'Gate OpenNLP Tokenizer',
+      lang:'(English)',
+      license:License
+    ],
+    [
+      id:'gate.opennlp.postagger',
+      name:"Gate OpenNLP (v${VERSION}) POSTagger",
+      url:"${ROOT}/GateOpenNlpPOSTagger",
+      desc:'Gate OpenNLP POSTagger',
+      lang:'(English)',
+      license:License
+    ],
+
+
+    [
+      id:'gate.opennlp.namedentityrecognizer',
+      name:"Gate OpenNLP (v${VERSION}) NamedEntityRecognizer",
+      url:"${ROOT}/GateOpenNlpNamedEntityRecognizer",
+      desc:'Gate OpenNLP NamedEntityRecognizer',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'gate.annie.splitter',
+      name:"Gate Annie (v${VERSION}) Splitter",
+      url:"${ROOT}/GateAnnieSplitter",
+      desc:'Gate Annie Splitter',
+      lang:'(English)',
+      license:License
+    ],
+    [
+      id:'gate.annie.tokenizer',
+      name:"Gate Annie (v${VERSION}) Tokenizer",
+      url:"${ROOT}/GateAnnieTokenizer",
+      desc:'Gate Annie Tokenizer',
+      lang:'(English)',
+      license:License
+    ],
+    [
+      id:'gate.annie.postagger',
+      name:"Gate Annie (v${VERSION}) POSTagger",
+      url:"${ROOT}/GateAnniePOSTagger",
+      desc:'Gate Annie POSTagger',
+      lang:'(English)',
+      license:License
+    ],
+
+
+    [
+      id:'gate.annie.namedentityrecognizer',
+      name:"Gate Annie (v${VERSION}) NamedEntityRecognizer",
+      url:"${ROOT}/GateAnnieNamedEntityRecognizer",
+      desc:'Gate Annie NamedEntityRecognizer',
+      lang:'(English)',
+      license:License
+    ]
+]
+
+
+
+services.each {
+    comment it.name
+    it.id = "${it.id}_${VERSION}"
+    register_service(it)
+}

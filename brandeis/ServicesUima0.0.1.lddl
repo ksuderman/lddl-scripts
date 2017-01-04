@@ -1,0 +1,118 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+
+def VERSION = "0.0.1"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/uima.dkpro/${VERSION}/services"
+
+License = 'Apache License, Version 2.0'
+
+
+services = [
+    [
+      id:'uima.dkpro.opennlp.splitter',
+      name:"DkPro UIMA OpenNLP (v${VERSION}) Splitter",
+      url:"${ROOT}/UimaDkproOpenNLPSplitter",
+      desc:'DkPro UIMA OpenNLP Splitter',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'uima.dkpro.opennlp.tokenizer',
+      name:"DkPro UIMA OpenNLP (v${VERSION}) Tokenizer",
+      url:"${ROOT}/UimaDkproOpenNLPTokenizer",
+      desc:'DkPro UIMA OpenNLP Tokenizer',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'uima.dkpro.opennlp.postagger',
+      name:"DkPro UIMA OpenNLP (v${VERSION}) POSTagger",
+      url:"${ROOT}/UimaDkproOpenNLPPOSTagger",
+      desc:'DkPro UIMA OpenNLP POSTagger',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'uima.dkpro.opennlp.parser',
+      name:"DkPro UIMA OpenNLP (v${VERSION}) Parser",
+      url:"${ROOT}/UimaDkproOpenNLPParser",
+      desc:'DkPro UIMA OpenNLP Parser',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'uima.dkpro.opennlp.namedentityrecognizer',
+      name:"DkPro UIMA OpenNLP (v${VERSION}) NamedEntityRecognizer",
+      url:"${ROOT}/UimaDkproOpenNLPNamedEntityRecognizer",
+      desc:'DkPro UIMA OpenNLP NamedEntityRecognizer',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'uima.dkpro.stanfordnlp.splitter',
+      name:"DkPro UIMA Stanford NLP (v${VERSION}) Splitter",
+      url:"${ROOT}/UimaDkproStanfordSplitter",
+      desc:'DkPro UIMA Stanford NLP Splitter',
+      lang:'(English)',
+      license:License
+    ],
+    [
+      id:'uima.dkpro.stanfordnlp.tokenizer',
+      name:"DkPro UIMA Stanford NLP (v${VERSION}) Tokenizer",
+      url:"${ROOT}/UimaDkproStanfordTokenizer",
+      desc:'DkPro UIMA Stanford NLP Tokenizer',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'uima.dkpro.stanfordnlp.postagger',
+      name:"DkPro UIMA Stanford NLP (v${VERSION}) POSTagger",
+      url:"${ROOT}/UimaDkproStanfordPOSTagger",
+      desc:'DkPro UIMA Stanford NLP POSTagger',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'uima.dkpro.stanfordnlp.namedentityrecognizer',
+      name:"DkPro UIMA Stanford NLP (v${VERSION}) NamedEntityRecognizer",
+      url:"${ROOT}/UimaDkproStanfordNamedEntityRecognizer",
+      desc:'DkPro UIMA Stanford NLP NamedEntityRecognizer',
+      lang:'(English)',
+      license:License
+    ],
+
+    [
+      id:'uima.dkpro.stanfordnlp.parser',
+      name:"DkPro UIMA Stanford NLP (v${VERSION}) Parser",
+      url:"${ROOT}/UimaDkproStanfordParser",
+      desc:'DkPro UIMA Stanford NLP Parser',
+      lang:'(English)',
+      license:License
+    ],
+    [
+      id:'uima.dkpro.stanfordnlp.coref',
+      name:"DkPro UIMA Stanford NLP (v${VERSION}) Coreference",
+      url:"${ROOT}/UimaDkproStanfordCoreference",
+      desc:'DkPro UIMA Stanford NLP Coreference',
+      lang:'(English)',
+      license:License
+    ],
+]
+
+
+
+services.each {
+    comment it.name
+    it.id = "${it.id}_${VERSION}"
+    register_service(it)
+}
