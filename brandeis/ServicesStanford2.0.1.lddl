@@ -16,7 +16,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP POSTagger",
       url:"${ROOT}/POSTagger",
       desc:'Stanford NLP POSTagger',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -25,7 +25,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP Tokenizer",
       url:"${ROOT}/Tokenizer",
       desc:'Stanford NLP Tokenizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -34,7 +34,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP NamedEntityRecognizer",
       url:"${ROOT}/NamedEntityRecognizer",
       desc:'Stanford NLP NamedEntityRecognizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -43,7 +43,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP Splitter",
       url:"${ROOT}/Splitter",
       desc:'Stanford NLP Splitter',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -52,7 +52,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP Parser",
       url:"${ROOT}/Parser",
       desc:'Stanford NLP Parser',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -61,7 +61,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP DependencyParser",
       url:"${ROOT}/DependencyParser",
       desc:'Stanford NLP DependencyParser',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -70,7 +70,7 @@ services = [
       name:"Stanford (v${VERSION}) NLP Coreference",
       url:"${ROOT}/Coreference",
       desc:'Stanford NLP Coreference',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 

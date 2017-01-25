@@ -16,7 +16,7 @@ services = [
       name:"OpenNLP (v${VERSION}) POSTagger",
       url:"${ROOT}/POSTagger",
       desc:'OpenNLP POSTagger',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -25,7 +25,7 @@ services = [
       name:"OpenNLP (v${VERSION}) Tokenizer",
       url:"${ROOT}/Tokenizer",
       desc:'OpenNLP Tokenizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -34,7 +34,7 @@ services = [
       name:"OpenNLP (v${VERSION}) NamedEntityRecognizer",
       url:"${ROOT}/NamedEntityRecognizer",
       desc:'OpenNLP NamedEntityRecognizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -43,7 +43,7 @@ services = [
       name:"OpenNLP (v${VERSION}) Splitter",
       url:"${ROOT}/Splitter",
       desc:'OpenNLP Splitter',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -52,7 +52,7 @@ services = [
       name:"OpenNLP (v${VERSION}) Parser",
       url:"${ROOT}/Parser",
       desc:'OpenNLP Parser',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -62,7 +62,7 @@ services = [
       // name:"OpenNLP (v${VERSION}) Coreference",
       // url:"${ROOT}/Coreference",
       // desc:'OpenNLP Coreference',
-      // lang:'(English)',
+      // lang:'en',
       // license:License
     // ],
 ]
