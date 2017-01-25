@@ -5,7 +5,7 @@ include 'Functions'
 
 
 def VERSION = "2.0.2"
-def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/opennlp-web-service/${VERSION}-SNAPSHOT/services"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/opennlp-web-service/${VERSION}/services"
 
 License = 'Apache License, Version 2.0'
 
