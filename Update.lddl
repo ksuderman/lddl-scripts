@@ -4,7 +4,6 @@
  * to be used.
  */
  
-//COPYRIGHT = "Copyright 2017 American National Corpus"
 include 'Copyright'
 
 if (args.size() == 0) {

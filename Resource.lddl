@@ -1,6 +1,7 @@
 include 'Common'
 include 'Domains'
 include 'Database'
+include 'Copyright'
 
 def LANG = 'resource.meta.lang'
 def SIZE = 'resource.meta.size'
@@ -60,6 +61,19 @@ resourceType {
     domain DOMAIN
     description "A type for resources that do not require a type."
     attributes LANG, SIZE, UNIT
+}
+
+resource {
+    id NONE_ID
+    copyright COPYRIGHT
+    license APACHE
+    description 'A resource for services that do not require a resource.'
+    name 'None'
+    domain DOMAIN
+    type NONE_TYPE
+    attributes {
+    	lang 'none'
+    }
 }
 
 news 'LAPPS resources have been registered.'

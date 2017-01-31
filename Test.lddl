@@ -1,10 +1,26 @@
-COPYRIGHT = "Copyright 2014 American National Corpus"
+include 'Copyright'
 
 if (args.size() == 0) {
 	println "No module(s) specified."
 	System.exit(1)
 }
 
-args.each { module,value ->
-	include module //"'${module}'"
+File dir = new File(args[0])
+if (!dir.exists()) {
+	println "No such directory ${dir.path}"
+	return
 }
+
+if (!dir.isDirectory()) {
+	println "Not a directory: ${dir.path}"
+	return
+}
+
+dir.eachFileMatch(~/.*\.lddl/) {
+	println it.path
+}
+
+
+//args.each { module,value ->
+//	include module //"'${module}'"
+//}

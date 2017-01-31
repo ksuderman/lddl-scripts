@@ -1,10 +1,9 @@
 /*
- * A modular LDDL script for configuring the common LAPPS types and interfaces.
+ * The definitions required for a compliant LAPPS Grid instance.
  */
 include 'Common'
 include 'Database'
 include 'Domains'
-//include 'Protocols'
 include 'Resource'
 include 'Service'
 include 'Interfaces'

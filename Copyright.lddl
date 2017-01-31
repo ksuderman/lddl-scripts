@@ -1,1 +1,5 @@
-COPYRIGHT = "Copyright ${new Date().format('yyyy')} Language Application Grid"
+/*
+ * Generates the Copyright notice included with service definitions. Having a 
+ * separate single definition ensures all copyright notices are consisten.
+ */
+COPYRIGHT = "Copyright ${new Date().format('yyyy')} The Language Application Grid"
