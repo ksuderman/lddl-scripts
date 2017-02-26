@@ -19,7 +19,7 @@ else {
 include 'Setup'
 
 // Include all .lddl files in the vassar directory.
-new File('vassar).eachFileMatch(~/.*\.lddl/) {
+new File('vassar').eachFileMatch(~/.*\.lddl/) {
 	include it.path
 }
 
