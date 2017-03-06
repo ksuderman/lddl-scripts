@@ -1,0 +1,86 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+
+def VERSION = "2.0.3"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/stanfordnlp-web-service/${VERSION}/services"
+
+License = 'GNU General Public License (v2 or later)'
+
+
+services = [
+    [
+      id:'stanfordnlp.postagger',
+      name:"Stanford (v${VERSION}) NLP POSTagger",
+      url:"${ROOT}/POSTagger",
+      desc:'Stanford NLP POSTagger',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'stanfordnlp.tokenizer',
+      name:"Stanford (v${VERSION}) NLP Tokenizer",
+      url:"${ROOT}/Tokenizer",
+      desc:'Stanford NLP Tokenizer',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'stanfordnlp.namedentityrecognizer',
+      name:"Stanford (v${VERSION}) NLP NamedEntityRecognizer",
+      url:"${ROOT}/NamedEntityRecognizer",
+      desc:'Stanford NLP NamedEntityRecognizer',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'stanfordnlp.splitter',
+      name:"Stanford (v${VERSION}) NLP Splitter",
+      url:"${ROOT}/Splitter",
+      desc:'Stanford NLP Splitter',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'stanfordnlp.parser',
+      name:"Stanford (v${VERSION}) NLP Parser",
+      url:"${ROOT}/Parser",
+      desc:'Stanford NLP Parser',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'stanfordnlp.dependencyparser',
+      name:"Stanford (v${VERSION}) NLP DependencyParser",
+      url:"${ROOT}/DependencyParser",
+      desc:'Stanford NLP DependencyParser',
+      lang:'en',
+      license:License
+    ],
+
+    [
+      id:'stanfordnlp.coref',
+      name:"Stanford (v${VERSION}) NLP Coreference",
+      url:"${ROOT}/Coreference",
+      desc:'Stanford NLP Coreference',
+      lang:'en',
+      license:License
+    ],
+
+]
+
+
+
+
+services.each {
+    comment it.name
+    it.id = "${it.id}_${VERSION}"
+    register_service(it)
+}
