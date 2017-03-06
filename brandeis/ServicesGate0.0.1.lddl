@@ -17,7 +17,7 @@ services = [
       name:"Gate OpenNLP (v${VERSION}) Splitter",
       url:"${ROOT}/GateOpenNlpSplitter",
       desc:'Gate OpenNLP Splitter',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
     [
@@ -25,7 +25,7 @@ services = [
       name:"Gate OpenNLP (v${VERSION}) Tokenizer",
       url:"${ROOT}/GateOpenNlpTokenizer",
       desc:'Gate OpenNLP Tokenizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
     [
@@ -33,7 +33,7 @@ services = [
       name:"Gate OpenNLP (v${VERSION}) POSTagger",
       url:"${ROOT}/GateOpenNlpPOSTagger",
       desc:'Gate OpenNLP POSTagger',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -43,7 +43,7 @@ services = [
       name:"Gate OpenNLP (v${VERSION}) NamedEntityRecognizer",
       url:"${ROOT}/GateOpenNlpNamedEntityRecognizer",
       desc:'Gate OpenNLP NamedEntityRecognizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -52,7 +52,7 @@ services = [
       name:"Gate Annie (v${VERSION}) Splitter",
       url:"${ROOT}/GateAnnieSplitter",
       desc:'Gate Annie Splitter',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
     [
@@ -60,7 +60,7 @@ services = [
       name:"Gate Annie (v${VERSION}) Tokenizer",
       url:"${ROOT}/GateAnnieTokenizer",
       desc:'Gate Annie Tokenizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
     [
@@ -68,7 +68,7 @@ services = [
       name:"Gate Annie (v${VERSION}) POSTagger",
       url:"${ROOT}/GateAnniePOSTagger",
       desc:'Gate Annie POSTagger',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -78,7 +78,7 @@ services = [
       name:"Gate Annie (v${VERSION}) NamedEntityRecognizer",
       url:"${ROOT}/GateAnnieNamedEntityRecognizer",
       desc:'Gate Annie NamedEntityRecognizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ]
 ]

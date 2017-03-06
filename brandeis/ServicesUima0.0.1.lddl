@@ -16,7 +16,7 @@ services = [
       name:"DkPro UIMA OpenNLP (v${VERSION}) Splitter",
       url:"${ROOT}/UimaDkproOpenNLPSplitter",
       desc:'DkPro UIMA OpenNLP Splitter',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -25,7 +25,7 @@ services = [
       name:"DkPro UIMA OpenNLP (v${VERSION}) Tokenizer",
       url:"${ROOT}/UimaDkproOpenNLPTokenizer",
       desc:'DkPro UIMA OpenNLP Tokenizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -34,7 +34,7 @@ services = [
       name:"DkPro UIMA OpenNLP (v${VERSION}) POSTagger",
       url:"${ROOT}/UimaDkproOpenNLPPOSTagger",
       desc:'DkPro UIMA OpenNLP POSTagger',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -43,7 +43,7 @@ services = [
       name:"DkPro UIMA OpenNLP (v${VERSION}) Parser",
       url:"${ROOT}/UimaDkproOpenNLPParser",
       desc:'DkPro UIMA OpenNLP Parser',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -52,7 +52,7 @@ services = [
       name:"DkPro UIMA OpenNLP (v${VERSION}) NamedEntityRecognizer",
       url:"${ROOT}/UimaDkproOpenNLPNamedEntityRecognizer",
       desc:'DkPro UIMA OpenNLP NamedEntityRecognizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -61,7 +61,7 @@ services = [
       name:"DkPro UIMA Stanford NLP (v${VERSION}) Splitter",
       url:"${ROOT}/UimaDkproStanfordSplitter",
       desc:'DkPro UIMA Stanford NLP Splitter',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
     [
@@ -69,7 +69,7 @@ services = [
       name:"DkPro UIMA Stanford NLP (v${VERSION}) Tokenizer",
       url:"${ROOT}/UimaDkproStanfordTokenizer",
       desc:'DkPro UIMA Stanford NLP Tokenizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -78,7 +78,7 @@ services = [
       name:"DkPro UIMA Stanford NLP (v${VERSION}) POSTagger",
       url:"${ROOT}/UimaDkproStanfordPOSTagger",
       desc:'DkPro UIMA Stanford NLP POSTagger',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -87,7 +87,7 @@ services = [
       name:"DkPro UIMA Stanford NLP (v${VERSION}) NamedEntityRecognizer",
       url:"${ROOT}/UimaDkproStanfordNamedEntityRecognizer",
       desc:'DkPro UIMA Stanford NLP NamedEntityRecognizer',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 
@@ -96,7 +96,7 @@ services = [
       name:"DkPro UIMA Stanford NLP (v${VERSION}) Parser",
       url:"${ROOT}/UimaDkproStanfordParser",
       desc:'DkPro UIMA Stanford NLP Parser',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
     [
@@ -104,7 +104,7 @@ services = [
       name:"DkPro UIMA Stanford NLP (v${VERSION}) Coreference",
       url:"${ROOT}/UimaDkproStanfordCoreference",
       desc:'DkPro UIMA Stanford NLP Coreference',
-      lang:'(English)',
+      lang:'en',
       license:License
     ],
 ]

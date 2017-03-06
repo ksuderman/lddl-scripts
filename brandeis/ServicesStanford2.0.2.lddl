@@ -4,7 +4,7 @@ include 'Common'
 include 'Functions'
 
 
-def VERSION = "2.0.1"
+def VERSION = "2.0.2"
 def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/stanfordnlp-web-service/${VERSION}/services"
 
 License = 'GNU General Public License (v2 or later)'

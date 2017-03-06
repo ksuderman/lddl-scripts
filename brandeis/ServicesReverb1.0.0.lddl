@@ -15,7 +15,7 @@ services = [
       name:"ReVerb Relation Extractor (v${VERSION})",
       url:"${ROOT}/RelationExtractor",
       desc:'ReVerb Relation Extractor',
-      lang:'(English)',
+      lang:'en',
       license:'ReVerb Software License Agreement'
     ],
 
