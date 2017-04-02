@@ -34,12 +34,12 @@ user {
     organization 'Kyoto University'
 }
 
-temporaryUser {
-	name 'tester'
-	password 'tester'
-	duration 366.days
-	owner ROOT
-}
+//temporaryUser {
+//	name 'tester'
+//	password 'tester'
+//	duration 366.days
+//	owner ROOT
+//}
 
 news 'Registered users for Kyoto and Brandies universities.'
-news 'Created temporary user tester'
+//news 'Created temporary user tester'
