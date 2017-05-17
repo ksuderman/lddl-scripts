@@ -1,0 +1,28 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+
+def VERSION = "1.0.1"
+def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/reverb-web-service/${VERSION}/services"
+
+License = 'ReVerb Software License Agreement'
+
+services = [
+    [
+      id:'reverb.relationextractor',
+      name:"ReVerb Relation Extractor (v${VERSION})",
+      url:"${ROOT}/RelationExtractor",
+      desc:'ReVerb Relation Extractor',
+      lang:'en',
+      license:'ReVerb Software License Agreement'
+    ],
+
+]
+
+services.each {
+    comment it.name
+    it.id = "${it.id}_${VERSION}"
+    register_service(it)
+}
