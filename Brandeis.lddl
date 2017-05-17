@@ -4,16 +4,36 @@
  */
 include 'Servers'
 
-COPYRIGHT = 'Copyright 2015 Brandeis University'
+if (args.clean) {
+	println "Cleaning the database"
+	include 'Cleanup'
+}
+else {
+	println "Assuming a fresh database install."
+	include 'DatabaseSetup'
+}
+
+// The Setup script includes the common LAPPS definitions for resource and 
+// service types, and meta-attribues.
+include 'Setup'
+
+COPYRIGHT = 'Copyright 2017 Brandeis University'
 
 // Definitions of the processing services available at Brandeis University.
 include 'brandeis/Resource'
+include 'brandeis/ServicesOpenNLP2.0.0'
+include 'brandeis/ServicesOpenNLP2.0.1'
 include 'brandeis/ServicesOpenNLP2.0.2'
+include 'brandeis/ServicesStanford2.0.0'
 include 'brandeis/ServicesStanford2.0.1'
+include 'brandeis/ServicesStanford2.0.2'
+include 'brandeis/ServicesStanford2.0.3'
 include 'brandeis/ServicesUima0.0.1'
 include 'brandeis/ServicesGate0.0.1'
 include 'brandeis/ServicesReverb1.0.0'
-//include 'brandeis/ServicesClearNLP1.0.0'
+include 'brandeis/ServicesReverb1.0.1'
+
+include 'brandeis/Users'
 
 news 'The Brandeis node has been configured via LDDL'
 
