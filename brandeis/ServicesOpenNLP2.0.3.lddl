@@ -1,8 +1,14 @@
-include 'Servers'
-include 'Database'
-include 'Common'
-include 'Functions'
+// first check if the script is run individually, not through Brandeis.lddl uber script
+// NOTE how this checking works! Users should change the path to lddl-script/brandeis before running an individual service registration
+String pathAdj = "";
+if (new File(".").getCanonicalPath().endsWith("lddl-scripts/brandeis")) {
+    pathAdj = "../"
+    COPYRIGHT = 'Copyright 2017 Brandeis University'
+}
 
+for (String preamble : ["Servers", "Database", "Common", "Functions"]) {
+    include pathAdj + preamble
+}
 
 def VERSION = "2.0.3"
 def ROOT = "http://eldrad.cs-i.brandeis.edu:8282/opennlp-web-service/${VERSION}/services"
