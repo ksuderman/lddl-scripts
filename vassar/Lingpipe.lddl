@@ -7,10 +7,10 @@ def VERSION = args.version ?: "1.1.0"
 def ROOT="${servers.DEFAULT}/LingpipeServices/${VERSION}/services"
 
 [
-    [id:"lingpipe.tokenizer_${VERSION}", name:'Tokenizer', desc:'Lingpipe Tokenizer', license:'AGPL 3.0'],
-    [id:"lingpipe.tagger_${VERSION}", name:'Tagger', desc:'Lingpipe POS Tagger', license:'AGPL 3.0'],
-    [id:"lingpipe.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Lingpipe NER', license:'AGPL 3.0'],
-    [id:"lingpipe.splitter_${VERSION}", name:'SentenceSplitter', desc:'Lingpipe SentenceSplitter', license:'AGPL 3.0'],
+    [id:"lingpipe.tokenizer_${VERSION}", name:'LingpipeTokenizer', desc:'Lingpipe Tokenizer', license:'AGPL 3.0'],
+    [id:"lingpipe.tagger_${VERSION}", name:'LingpipeTagger', desc:'Lingpipe POS Tagger', license:'AGPL 3.0'],
+    [id:"lingpipe.ner_${VERSION}", name:'LingpipeNER', desc:'Lingpipe NER', license:'AGPL 3.0'],
+    [id:"lingpipe.splitter_${VERSION}", name:'LingpipeSentenceSplitter', desc:'Lingpipe SentenceSplitter', license:'AGPL 3.0'],
     [id:"lingpipe.dictionary_ner_${VERSION}", name:'LingpipeDictionaryBasedNER', desc:'Named entity recognition based on a user supplied dictionary of terms.', license:'AGPL 3.0']
 ].each {
     it.url = "${ROOT}/${it.name}"
