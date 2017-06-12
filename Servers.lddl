@@ -26,7 +26,7 @@
 servers = [:]
 servers.test = 'https://localhost:9443'
 servers.localhost = 'http://localhost:9080'
-servers.vassar = 'https://vassar.lappsgrid.org'
+servers.vassar = 'http://vassar.lappsgrid.org'
 //servers.vassar = 'http://grid.anc.org:9080'
 servers.brandeis = 'http://eldrad.cs-i.brandeis.edu:8282'
 
