@@ -13,7 +13,7 @@ def ROOT="${servers.DEFAULT}/WeblichtStanfordServices/${VERSION}/services"
     [id:"weblicht.stanford.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Stanford NER', license:'GPL'],
     [id:"weblicht.stanford.parser_${VERSION}", name:'Parser', desc:'Stanford Parser', license:'GPL']
 ].each {
-    it.url = "${ROOT}/${it.name}"
+    it.url = "${ROOT}/${it.name}Wrappper"
     it.name = "Stanford ${it.name} v${VERSION}"
     register_service(it)
 }
