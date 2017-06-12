@@ -4,7 +4,7 @@ include 'Common'
 include 'Functions'
 
 def VERSION = args.version ?: "1.0.0"
-def ROOT="${servers.DEFAULT}/WeblichtStanfordServices/${VERSION}/services"
+def ROOT="${servers.vassar}/WeblichtStanfordServices/${VERSION}-SNAPSHOT/services"
 
 // Wrappers for the Weblicht Stanford services.
 [
