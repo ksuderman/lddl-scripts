@@ -1,0 +1,19 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def VERSION = args.version ?: "1.0.0"
+def ROOT="${servers.DEFAULT}/WeblichtStanfordServices/${VERSION}/services"
+
+// Wrappers for the Weblicht Stanford services.
+[
+    [id:"weblicht.stanford.tokenizer_${VERSION}", name:'Tokenizer', desc:'Stanford Tokenizer', license:'GPL'],
+    [id:"weblicht.stanford.tagger_${VERSION}", name:'Tagger', desc:'Stanford POS Tagger', license:'GPL'],
+    [id:"weblicht.stanford.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Stanford NER', license:'GPL'],
+    [id:"weblicht.stanford.parser_${VERSION}", name:'Parser', desc:'Stanford Parser', license:'GPL']
+].each {
+    it.url = "${ROOT}/${it.name}"
+    it.name = "Stanford ${it.name} v${VERSION}"
+    register_service(it)
+}
