@@ -8,12 +8,12 @@ def ROOT="${servers.vassar}/WeblichtStanfordServices/${VERSION}/services"
 
 // Wrappers for the Weblicht Stanford services.
 [
-    [id:"weblicht.stanford.tokenizer_${VERSION}", name:'Weblicht Stanford Tokenizer', desc:'Weblicht Stanford Tokenizer', license:'GPL'],
-    [id:"weblicht.stanford.tagger_${VERSION}", name:'Weblicht Stanford Tagger', desc:'Weblicht Stanford POS Tagger', license:'GPL'],
-    [id:"weblicht.stanford.ner_${VERSION}", name:'Weblicht Stanford NamedEntityRecognizer', desc:'Weblicht Stanford NER', license:'GPL'],
-    [id:"weblicht.stanford.parser_${VERSION}", name:'Weblicht Stanford Parser', desc:'Weblicht Stanford Parser', license:'GPL']
+    [id:"weblicht.stanford.tokenizer_${VERSION}", name:'Tokenizer', desc:'Weblicht Stanford Tokenizer', license:'GPL'],
+    [id:"weblicht.stanford.tagger_${VERSION}", name:'Tagger', desc:'Weblicht Stanford POS Tagger', license:'GPL'],
+    [id:"weblicht.stanford.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Weblicht Stanford NER', license:'GPL'],
+    [id:"weblicht.stanford.parser_${VERSION}", name:'Parser', desc:'Weblicht Stanford Parser', license:'GPL']
 ].each {
     it.url = "${ROOT}/${it.name}Wrapper"
-    it.name = "Stanford ${it.name} v${VERSION}"
+    it.name = "Weblicht Stanford ${it.name} v${VERSION}"
     register_service(it)
 }
