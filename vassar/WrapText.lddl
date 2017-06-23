@@ -1,0 +1,16 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def VERSION = args.version ?: '1.0.0'
+def ROOT="${servers.DEFAULT}/wrap-text/${VERSION}/services"
+
+def allServices = [
+    // Versioned services
+    [id:"wrap.text_${VERSION}", name:"WrapText v${VERSION}", url:"${ROOT}/WrapText", desc:'Wraps plain text in a Data object.', license:'Apache 2.0'],
+    [id:"wrap.tcf_${VERSION}", name:"WrapTcf v${VERSION}", url:"${ROOT}/WrapTcf", desc:'Wraps plain text in TCF/XML.', license:'Apache 2.0'],
+    [id:"wrap.lif${VERSION}", name:"WrapLif v${VERSION}", url:"${ROOT}/WrapLif", desc:'Wraps plain text in a LIF Container.', license:'Apache 2.0']
+]
+
+register_services(allServices)
