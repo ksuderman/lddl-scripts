@@ -9,7 +9,7 @@ def ROOT="${servers.vassar}/tcf-converter/${VERSION}/services/converter"
 def service = [
 	id: "tcf-converter_1.0.0",
 	name: "TCF to LIF converter",
-	description: "Converts TCF (Text Corpus Format) into the Lappsgrid Interchange Format.",
+	desc: "Converts TCF (Text Corpus Format) into the Lappsgrid Interchange Format.",
 	license: "Apache 2.0",
 	url: ROOT
 ]
