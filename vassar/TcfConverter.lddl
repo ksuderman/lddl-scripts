@@ -1,0 +1,15 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def VERSION = args.version ?: "1.0.0"
+def ROOT="${servers.vassar}/tcf-converter/${VERSION}/services/converter"
+
+def service = [
+	id: "tcf-converter_1.0.0",
+	name: "TCF to LIF converter",
+	license: "Apache 2.0",
+	url: ROOT
+]
+register_service(service)
