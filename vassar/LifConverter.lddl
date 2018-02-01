@@ -1,0 +1,16 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def VERSION = args.version ?: "1.0.0"
+def ROOT="${servers.vassar}/WeblichtStanfordServices/${VERSION}/services"
+
+// Wrapper for the Weblicht LIF converter.
+[
+    [id:"weblicht.lif.converter_${VERSION}", name:'Lif2Tcf', desc:'Weblicht LIF Converter', license:'GPL']
+].each {
+    it.url = "${ROOT}/${it.name}Wrapper"
+    it.name = "Weblicht LIF Conveter v${VERSION}"
+    register_service(it)
+}
