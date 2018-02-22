@@ -7,6 +7,7 @@ def VERSION = args.version ?: "1.0.0"
 def ROOT="${servers.vassar}/WeblichtStanfordServices/${VERSION}/services"
 
 // Wrappers for the Weblicht Stanford services.
+/*
 [
     [id:"weblicht.stanford.tokenizer_${VERSION}", name:'Tokenizer', desc:'Weblicht Stanford Tokenizer', license:'GPL'],
     [id:"weblicht.stanford.tagger_${VERSION}", name:'Tagger', desc:'Weblicht Stanford POS Tagger', license:'GPL'],
@@ -15,5 +16,13 @@ def ROOT="${servers.vassar}/WeblichtStanfordServices/${VERSION}/services"
 ].each {
     it.url = "${ROOT}/${it.name}Wrapper"
     it.name = "Weblicht Stanford ${it.name} v${VERSION}"
+    register_service(it)
+}
+*/
+[
+	[id:"weblicht.morph.adorner_${VERSION}", name:"MorphAdorner", desc:'Weblicht Morphological Annotator', license:'NCSA']
+].each {
+    it.url = "${ROOT}/${it.name}Wrapper"
+    it.name = "Weblicht ${it.name} v${VERSION}"
     register_service(it)
 }
