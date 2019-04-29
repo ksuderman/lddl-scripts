@@ -1,0 +1,15 @@
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def VERSION = args.version ?: "1.0.0-SNAPSHOT"
+def ROOT="http://129.114.17.83:8000/GostService/1.0.0-SNAPSHOT/services/GostService"
+
+def service = [
+	id: "gost_1.0.0-SNAPSHOT",
+	name: "GO Semantic Tagger",
+	desc: "Converts TCF (Text Corpus Format) into the Lappsgrid Interchange Format.",
+	license: "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License",
+	url: ROOT
+]
+register_service(service)
