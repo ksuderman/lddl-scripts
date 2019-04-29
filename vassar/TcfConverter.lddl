@@ -7,7 +7,7 @@ def VERSION = args.version ?: "1.0.0"
 def ROOT="${servers.vassar}/tcf-converter/${VERSION}/services/converter"
 
 def service = [
-	id: "tcf-converter_1.0.0",
+	id: "tcf-converter_1.0.1",
 	name: "TCF to LIF converter",
 	desc: "Converts TCF (Text Corpus Format) into the Lappsgrid Interchange Format.",
 	license: "Apache 2.0",
