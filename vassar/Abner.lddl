@@ -4,7 +4,7 @@ include 'Common'
 include 'Functions'
 
 def VERSION = args.version ?: '1.0.0'
-def ROOT="${servers.DEFAULT}/AbnerTagger/${VERSION}/services/AbnerTagger"
+def ROOT="${servers.DEFAULT}/GateAbner/${VERSION}/services/AbnerTagger"
 
 def service = [
 	id: "gate.abner_${VERSION}",
