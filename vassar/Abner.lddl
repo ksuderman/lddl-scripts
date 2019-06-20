@@ -1,0 +1,16 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def VERSION = args.version ?: '1.0.0'
+def ROOT="${servers.DEFAULT}/AbnerTagger/${VERSION}/services/AbnerTagger"
+
+def service = [
+	id: "gate.abner_${VERSION}",
+	name: "Abner BioMedical NER",
+	desc: "GATE wrapper from the Abner BioMedical named entity recognizer",
+	license: "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License",
+	url: ROOT
+]
+register_service(service)
