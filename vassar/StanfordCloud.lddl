@@ -1,0 +1,19 @@
+include 'Servers'
+include 'Database'
+include 'Common'
+include 'Functions'
+
+def VERSION = args.version ?: "1.0.0-SNAPSHOT"
+def ROOT="${servers.swarm}/stanford-${VERSION}-SNAPSHOT/services"
+
+// Standalone versions of the Stanford Services have an SA prefix on the class name.
+[
+    [id:"stanford.cloud.tokenizer_${VERSION}", name:'Tokenizer', desc:'Stanford Tokenizer', license:'GPL'],
+    [id:"stanford.cloud.tagger_${VERSION}", name:'Tagger', desc:'Stanford POS Tagger', license:'GPL'],
+    [id:"stanford.cloud.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Stanford NER', license:'GPL'],
+    [id:"stanford.cloud.splitter_${VERSION}", name:'SentenceSplitter', desc:'Stanford SentenceSplitter', license:'GPL']
+].each {
+    it.url = "${ROOT}/${it.name}"
+    it.name = "Stanford Cloud ${it.name} v${VERSION}"
+    register_service(it)
+}
