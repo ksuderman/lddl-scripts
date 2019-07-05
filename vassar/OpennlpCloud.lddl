@@ -6,7 +6,7 @@ include 'Functions'
 println "Swarm server is ${servers.swarm}"
 
 def VERSION = args.version ?: "1.0.0-SNAPSHOT"
-def ROOT="${servers.swarm}/opennlp-soap-${VERSION}/services"
+def ROOT="http://129.114.17.83:8081/opennlp-soap-${VERSION}/services"
 
 [
     [id:"opennlp.cloud.tokenizer_${VERSION}", name:'Tokenizer', desc:'Apache OpenNLP Tokenizer', license:'Apache 2.0'],
@@ -19,3 +19,6 @@ def ROOT="${servers.swarm}/opennlp-soap-${VERSION}/services"
     it.name = "Apache OpenNLP Cloud ${it.name} v${VERSION}"
     register_service(it)
 }
+
+
+"http://129.114.17.83:8080"
