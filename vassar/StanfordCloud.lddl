@@ -6,7 +6,7 @@ include 'Functions'
 println "Swarm server is ${servers.swarm}"
 
 def VERSION = args.version ?: "1.0.0-SNAPSHOT"
-def ROOT="${servers.swarm}/stanford-${VERSION}-SNAPSHOT/services"
+def ROOT="${servers.swarm}/stanford-soap-${VERSION}-SNAPSHOT/services"
 
 // Standalone versions of the Stanford Services have an SA prefix on the class name.
 [
