@@ -9,8 +9,8 @@ def VERSION = args.version ?: "1.0.0"
 //def ROOT="http://129.114.17.83:8081/opennlp-soap/${VERSION}/services"
 def ROOT="http://129.114.17.83:8081/opennlp-cloud/1.0.0-SNAPSHOT/services"
 [
-//    [id:"opennlp.cloud.tokenizer_${VERSION}", name:'Tokenizer', desc:'Apache OpenNLP Tokenizer', license:'Apache 2.0'],
-//    [id:"opennlp.cloud.splitter_${VERSION}", name:'Splitter', desc:'Apache OpenNLP Sentence Splitter', license:'Apache 2.0'],
+    [id:"opennlp.cloud.tokenizer_${VERSION}", name:'Tokenizer', desc:'Apache OpenNLP Tokenizer', license:'Apache 2.0'],
+    [id:"opennlp.cloud.splitter_${VERSION}", name:'Splitter', desc:'Apache OpenNLP Sentence Splitter', license:'Apache 2.0'],
     [id:"opennlp.cloud.maxent_${VERSION}", name:'MaxEntTagger', desc:'Apache OpenNLP POS Tagger', license:'Apache 2.0'],
     [id:"opennlp.cloud.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Apache OpenNLP NER', license:'Apache 2.0'],
     [id:"opennlp.cloud.lemmatizer_${VERSION}", name:'Lemmatizer', desc:'Apache OpenNLP SentenceSplitter', license:'Apache 2.0']
