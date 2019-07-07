@@ -14,7 +14,10 @@ def ROOT="http://129.114.17.83:8081/opennlp-cloud/1.0.0-SNAPSHOT/services"
 //    [id:"opennlp.cloud.maxent_${VERSION}", name:'MaxEntTagger', desc:'Apache OpenNLP POS Tagger', license:'Apache 2.0'],
 //    [id:"opennlp.cloud.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Apache OpenNLP NER', license:'Apache 2.0'],
 //    [id:"opennlp.cloud.lemmatizer_${VERSION}", name:'Lemmatizer', desc:'Apache OpenNLP SentenceSplitter', license:'Apache 2.0']
-    [id:"opennlp.cloud.pipeline_${VERSION}", name:'Pipeline', desc:'Apache OpenNLP Pipeline', license:'Apache 2.0']
+//    [id:"opennlp.cloud.pipeline_${VERSION}", name:'Pipeline', desc:'Apache OpenNLP Pipeline', license:'Apache 2.0']
+    [id:"opennlp.cloud.maxent_pipeline_${VERSION}", name:'MaxEntPipeline', desc:'Apache OpenNLP POS Tagger', license:'Apache 2.0'],
+    [id:"opennlp.cloud.ner_pipeline_${VERSION}", name:'NamedEntityPipeline', desc:'Apache OpenNLP NER', license:'Apache 2.0'],
+    [id:"opennlp.cloud.lemmatizer_pipeline_${VERSION}", name:'LemmatizerPipeline', desc:'Apache OpenNLP SentenceSplitter', license:'Apache 2.0']
 ].each {
     it.url = "${ROOT}/${it.name}"
     it.name = "Apache OpenNLP Cloud ${it.name} v${VERSION}"
