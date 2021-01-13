@@ -4,7 +4,7 @@ include "Functions"
 include 'Servers'
 
 def VERSION = args.version ?: '2.1.0'
-def BASE_URL = "${servers.vassar}/GateConverter/${VERSION}/services/"
+def BASE_URL = "${servers.converters}/GateConverter/${VERSION}/services/"
 
 [
     [id:"convert.gate2json_${VERSION}", name:"GateToJson v${VERSION}", desc:"GATE to JSON-LD converter ", url:"${BASE_URL}/GateToJson"],

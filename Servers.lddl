@@ -27,7 +27,14 @@ servers = [:]
 servers.test = 'https://localhost:9443'
 servers.localhost = 'http://localhost:9080'
 //servers.vassar = 'http://vassar.lappsgrid.org'
-servers.vassar = 'http://grid.anc.org:9080'
+//servers.vassar = 'http://grid.anc.org:9080'
+servers.vassar = 'http://143.229.7.99'
+servers.masc = 'http://143.229.7.99:8007'
+servers.gate = 'http://143.229.7.99:8001'
+servers.stanford = 'http://143.229.7.99:8005'
+servers.lingpipe = 'http://143.229.7.99:8006'
+servers.converters = 'http://143.229.7.99:8003'
+
 servers.brandeis = 'http://eldrad.cs-i.brandeis.edu:8282'
 servers.swarm = "http://129.114.17.83:8080"
 servers.default = servers.localhost
