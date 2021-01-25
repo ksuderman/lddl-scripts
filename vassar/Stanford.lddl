@@ -3,18 +3,22 @@ include 'Database'
 include 'Common'
 include 'Functions'
 
-def VERSION = args.version ?: "2.1.0"
+//def VERSION = args.version ?: "2.1.0"
 def ROOT="${servers.stanford}/StanfordServices/${VERSION}-SNAPSHOT/services"
 
 // Standalone versions of the Stanford Services have an SA prefix on the class name.
-[
-    [id:"stanford.tokenizer_${VERSION}", name:'Tokenizer', desc:'Stanford Tokenizer', license:'GPL'],
-    [id:"stanford.tagger_${VERSION}", name:'Tagger', desc:'Stanford POS Tagger', license:'GPL'],
-    [id:"stanford.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Stanford NER', license:'GPL'],
-    [id:"stanford.ner2_${VERSION}", name:'SelectableNamedEntityRecognizer', desc:'Stanford Configurable NER', license:'GPL'],
-    [id:"stanford.splitter_${VERSION}", name:'SentenceSplitter', desc:'Stanford SentenceSplitter', license:'GPL']
-].each {
-    it.url = "${ROOT}/${it.name}"
-    it.name = "Stanford ${it.name} v${VERSION}"
-    register_service(it)
+['1.4.0', '2.0.0', '2.1.0-SNAPSHOT'].each { String VERSION ->
+
+	[
+		[id:"stanford.tokenizer_${VERSION}", name:'Tokenizer', desc:'Stanford Tokenizer', license:'GPL'],
+		[id:"stanford.tagger_${VERSION}", name:'Tagger', desc:'Stanford POS Tagger', license:'GPL'],
+		[id:"stanford.ner_${VERSION}", name:'NamedEntityRecognizer', desc:'Stanford NER', license:'GPL'],
+		[id:"stanford.ner2_${VERSION}", name:'SelectableNamedEntityRecognizer', desc:'Stanford Configurable NER', license:'GPL'],
+		[id:"stanford.splitter_${VERSION}", name:'SentenceSplitter', desc:'Stanford SentenceSplitter', license:'GPL']
+	].each {
+		it.id = it.id.replace('-SNAPSHOT', '')
+		it.url = "${ROOT}/${it.name}"
+		it.name = "Stanford ${it.name} v${VERSION}"
+		register_service(it)
+	}
 }

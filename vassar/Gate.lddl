@@ -3,24 +3,26 @@ include 'Database'
 include 'Common'
 include 'Functions'
 
-def VERSION = args.version ?: '2.2.0'
-def PORT=':8001'
-def ROOT="${servers.gate}/GateServices/${VERSION}/services"
+//def VERSION = args.version ?: '2.2.0'
+def ROOT="${servers.vassar}/GateServices/${VERSION}/services"
 
-def allServices = [
-    // Versioned services
-    [id:"gate.splitter_${VERSION}", name:"GATE SentenceSplitter v${VERSION}", url:"${ROOT}/SentenceSplitter", desc:'GATE SentenceSplitter', license:'GPL'],
-    [id:"gate.tokenizer_${VERSION}", name:"GATE Tokenizer v${VERSION}", url:"${ROOT}/Tokenizer", desc:'GATE Tokenizer', license:'GPL'],
-    [id:"gate.tagger_${VERSION}", name:"GATE POSTagger v${VERSION}", url:"${ROOT}/POSTagger", desc:'GATE POS Tagger', license:'GPL'],
-    [id:"gate.coref_${VERSION}", name:"GATE Coreferencer v${VERSION}", url:"${ROOT}/Coreferencer", desc:'GATE Coreferencer', license:'GPL'],
-    [id:"gate.npchunker_${VERSION}", name:"GATE NounPhraseChunker v${VERSION}", url:"${ROOT}/NounPhraseChunker", desc:'GATE NP Chunker', license:'GPL'],
-    [id:"gate.ortho_${VERSION}", name:"GATE OrthoMatcher v${VERSION}", url:"${ROOT}/OrthoMatcher", desc:'GATE OrthoMatcher', license:'GPL'],
-    [id:"gate.vpchunker_${VERSION}", name:"GATE VerbPhraseChunker v${VERSION}", url:"${ROOT}/VerbPhraseChunker", desc:'GATE Verb Phrase Chunker', license:'GPL'],
-    [id:"gate.gazetteer_${VERSION}", name:"GATE Gazetteer v${VERSION}", url:"${ROOT}/Gazetteer", desc:'GATE Gazetteer', license:'GPL'],
-    [id:"gate.ner_${VERSION}", name:"GATE NamedEntityRecognizer v${VERSION}", url:"${ROOT}/NamedEntityRecognizer", desc:'GATE Named Entity Recognizer', license:'GPL']
-    //id:"gate.annie_${VERSION}", name:"GATE Annie v${VERSION}", url:"${ROOT}/Annie", desc:'ANNIE application from GATE', license:'GPL'],
-    //[id:"gate.lingpipe_${VERSION}", name:"GATE LingPipe v${VERSION}", url:"${ROOT}/LingPipe", desc:'LingPipe application from GATE', license:'GPL'],
-    //[id:"gate.opennlp_${VERSION}", name:"GATE OpenNlp v${VERSION}", url:"${ROOT}/OpenNlp", desc:'OpenNLP application from GATE', license:'GPL']
-]
+def VERSIONS = ['2.0.0', '2.1.0', '2.2.0', '2.3.0']
+VERSIONS.each { String VERSION ->
+	def allServices = [
+		// Versioned services
+		[id:"gate.splitter_${VERSION}", name:"GATE SentenceSplitter v${VERSION}", url:"${ROOT}/SentenceSplitter", desc:'GATE SentenceSplitter', license:'GPL'],
+		[id:"gate.tokenizer_${VERSION}", name:"GATE Tokenizer v${VERSION}", url:"${ROOT}/Tokenizer", desc:'GATE Tokenizer', license:'GPL'],
+		[id:"gate.tagger_${VERSION}", name:"GATE POSTagger v${VERSION}", url:"${ROOT}/POSTagger", desc:'GATE POS Tagger', license:'GPL'],
+		[id:"gate.coref_${VERSION}", name:"GATE Coreferencer v${VERSION}", url:"${ROOT}/Coreferencer", desc:'GATE Coreferencer', license:'GPL'],
+		[id:"gate.npchunker_${VERSION}", name:"GATE NounPhraseChunker v${VERSION}", url:"${ROOT}/NounPhraseChunker", desc:'GATE NP Chunker', license:'GPL'],
+		[id:"gate.ortho_${VERSION}", name:"GATE OrthoMatcher v${VERSION}", url:"${ROOT}/OrthoMatcher", desc:'GATE OrthoMatcher', license:'GPL'],
+		[id:"gate.vpchunker_${VERSION}", name:"GATE VerbPhraseChunker v${VERSION}", url:"${ROOT}/VerbPhraseChunker", desc:'GATE Verb Phrase Chunker', license:'GPL'],
+		[id:"gate.gazetteer_${VERSION}", name:"GATE Gazetteer v${VERSION}", url:"${ROOT}/Gazetteer", desc:'GATE Gazetteer', license:'GPL'],
+		[id:"gate.ner_${VERSION}", name:"GATE NamedEntityRecognizer v${VERSION}", url:"${ROOT}/NamedEntityRecognizer", desc:'GATE Named Entity Recognizer', license:'GPL']
+		//id:"gate.annie_${VERSION}", name:"GATE Annie v${VERSION}", url:"${ROOT}/Annie", desc:'ANNIE application from GATE', license:'GPL'],
+		//[id:"gate.lingpipe_${VERSION}", name:"GATE LingPipe v${VERSION}", url:"${ROOT}/LingPipe", desc:'LingPipe application from GATE', license:'GPL'],
+		//[id:"gate.opennlp_${VERSION}", name:"GATE OpenNlp v${VERSION}", url:"${ROOT}/OpenNlp", desc:'OpenNLP application from GATE', license:'GPL']
+	]
 
-register_services(allServices)
+	register_services(allServices)
+}
