@@ -4,10 +4,10 @@ include 'Common'
 include 'Functions'
 
 //def VERSION = args.version ?: '2.2.0'
-def ROOT="${servers.vassar}/GateServices/${VERSION}/services"
 
 def VERSIONS = ['2.0.0', '2.1.0', '2.2.0', '2.3.0']
 VERSIONS.each { String VERSION ->
+	def ROOT="${servers.vassar}/GateServices/${VERSION}/services"
 	def allServices = [
 		// Versioned services
 		[id:"gate.splitter_${VERSION}", name:"GATE SentenceSplitter v${VERSION}", url:"${ROOT}/SentenceSplitter", desc:'GATE SentenceSplitter', license:'GPL'],
