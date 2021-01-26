@@ -18,20 +18,24 @@ else {
 // service types, and meta-attribues.
 include 'Setup'
 
+def modules = 'MASC Abner Datasources Converters Gate Stanford Lingpipe TcfConverter LifConverter Weblicht Users'.split(' ')
+modules.each { include "vassar/$it" }
+
 // Include all .lddl files in the vassar directory.
 //new File('vassar).eachFileMatch(~/.*\.lddl/) {
 //	include it.path
 //}
 
 // Definitions of the MASC DataSource resource
-include 'vassar/MASC'
+//include 'vassar/MASC'
 
 // Definitions of the processing services available at Vassar.
-include 'vassar/Datasources'
-include 'vassar/Converters'
-include 'vassar/Gate'
+//include 'vassar/Datasources'
+//include 'vassar/Converters'
+//include 'vassar/Gate'
 //include 'vassar/Stanford'
-include 'vassar/Users'
+//include '
+//include 'vassar/Users'
 
 
 news 'The ANC/Vassar LAPPS node has been configured via LDDL'
