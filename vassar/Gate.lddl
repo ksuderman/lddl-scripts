@@ -5,7 +5,7 @@ include 'Functions'
 
 //def VERSION = args.version ?: '2.2.0'
 
-def VERSIONS = ['2.0.0', '2.1.0', '2.2.0', '2.3.0']
+def VERSIONS = ['2.1.0', '2.2.0', '2.3.0']
 VERSIONS.each { String VERSION ->
 	def ROOT="${servers.vassar}/GateServices/${VERSION}/services"
 	def allServices = [

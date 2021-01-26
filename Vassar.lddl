@@ -30,7 +30,7 @@ include 'vassar/MASC'
 include 'vassar/Datasources'
 include 'vassar/Converters'
 include 'vassar/Gate'
-include 'vassar/Stanford'
+//include 'vassar/Stanford'
 include 'vassar/Users'
 
 

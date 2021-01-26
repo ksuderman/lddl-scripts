@@ -6,8 +6,8 @@ include 'Functions'
 //def VERSION = args.version ?: "2.1.0"
 
 // Standalone versions of the Stanford Services have an SA prefix on the class name.
-['1.4.0', '2.0.0', '2.1.0-SNAPSHOT'].each { String VERSION ->
-	def ROOT="${servers.stanford}/StanfordServices/${VERSION}/services"
+['2.0.0', '2.1.0-SNAPSHOT'].each { String VERSION ->
+	def ROOT="${servers.vassar}/StanfordServices/${VERSION}/services"
 	[
 		[id:"stanford.tokenizer_${VERSION}", name:'Tokenizer', desc:'Stanford Tokenizer', license:'GPL'],
 		[id:"stanford.tagger_${VERSION}", name:'Tagger', desc:'Stanford POS Tagger', license:'GPL'],
